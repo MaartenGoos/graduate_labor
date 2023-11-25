@@ -1,0 +1,1009 @@
+\documentclass[notes=show]{beamer}
+\usepackage{mathpazo}
+\usepackage{hyperref}
+\usepackage{multimedia}
+\usepackage{tcolorbox}
+\usepackage{tikz}
+\usetikzlibrary{shadows}
+\usetheme{metropolis}
+\usecolortheme{default}
+\setbeamertemplate{itemize item}{%
+    \begin{tikzpicture}
+        \shade[ball color=black!100!yellow, preaction={fill=black,
+opacity=.00,transform canvas={xshift=1mm,yshift=-1mm, yscale=0.5}}] (0,0) circle (0.6ex);
+    \end{tikzpicture}
+}
+\setbeamertemplate{itemize subitem}{%
+    \begin{tikzpicture}
+        \shade[ball color=black!100!white, preaction={fill=black,
+        opacity=.00,transform canvas={xshift=1mm,yshift=-1mm, yscale=0.5}}] (0,0) circle (0.6ex);
+    \end{tikzpicture}
+}
+\setbeamercolor{frametitle}{bg=white}
+\setbeamercolor{frametitle}{fg=black}
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{block body}{bg=mDarkTeal!30}
+\setbeamercolor{block title}{bg=mDarkTeal,fg=black!2}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}[page number]
+\newenvironment{stepenumerate}{\begin{enumerate}[<+->]}{\end{enumerate}}
+\newenvironment{stepitemize}{\begin{itemize}[<+->]}{\end{itemize} }
+\newenvironment{stepenumeratewithalert}{\begin{enumerate}[<+-| alert@+>]}{\end{enumerate}}
+\newenvironment{stepitemizewithalert}{\begin{itemize}[<+-| alert@+>]}{\end{itemize} }
+
+\begin{document}
+
+\title[Skill, Tasks and Technologies]{Skills, Tasks and Technologies: Implications for Employment and Earnings}
+\subtitle{}
+\date{Daron Acemoglu \& David Autor \bigskip \\
+\textit{Handbook of Labor Economics}, January 2011, Part 2, pages 1118-1166}
+\author{}
+\maketitle
+
+\begin{frame}{Table of Contents}
+\begin{itemize}
+\item[\textcolor{gray}{1.}] \textcolor{gray}{Introduction} \medskip
+\item[\textcolor{gray}{2.}] \textcolor{gray}{An Overview of Labor Market Trends} \medskip
+\item[\textcolor{gray}{3.}] \textcolor{gray}{The Canonical Model} \medskip
+\item[\textcolor{black}{4.}] \textcolor{black}{A Ricardian Model of the Labor Market} \medskip
+\item[\textcolor{black}{5.}] \textcolor{black}{Comparative Advantange and Wages: An Empirical Approach} \medskip
+\item[\textcolor{black}{6.}] \textcolor{black}{Concluding Remarks}
+\end{itemize}
+\end{frame}
+
+\section{4. A Ricardian Model of the Labor Market}
+
+\subsection{4.1 Environment}
+
+\begin{frame}{4. A Ricardian model of the labor market}
+\begin{itemize}
+\item[\textcolor{red}{4.1}] \textcolor{red}{Environment}
+\item[\textcolor{gray}{4.2}] \textcolor{gray}{Equilibrium without machines}
+\item[\textcolor{gray}{4.3}] \textcolor{gray}{Special cases}
+\item[\textcolor{gray}{4.4}] \textcolor{gray}{Comparative statics}
+\item[\textcolor{gray}{4.5}] \textcolor{gray}{Task replacing technologies}
+\item[\textcolor{gray}{4.6}] \textcolor{gray}{Endogenous choice of skill supply}
+\item[\textcolor{gray}{4.7}] \textcolor{gray}{Offshoring}
+\item[\textcolor{gray}{4.8}] \textcolor{gray}{Directed technical change}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Production technology}
+\begin{itemize}
+\item Static environment with a unique final good, $Y$. \medskip
+\item $Y$ produced with a continuum of tasks on the interval $[0,1]$. \medskip
+\item Cobb-Douglas technology mapping tasks into the final good:
+\[
+Y= \exp \left[ \int_{0}^{1} \ln y(i)di \right] \tag{11}  \label{eq11}
+\]
+where $y(i)$ is the service or production of task $i$. \medskip
+\item The final good is the numeraire, $P \equiv 1$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Supply of skills to tasks}
+\begin{itemize}
+\item There are 3 types of labor: low, medium and high skilled. Their supply is inelastic and given by $L, M, H$. \medskip
+\item Each task on the continuum is produced using:
+\begin{align*}
+y(i) & = A_{L} \alpha_{L}(i) l(i) + A_{M} \alpha_{M}(i) m(i) \\
+ & + A_{H} \alpha_{H}(i) h(i) + A_{K} \alpha_{K}(i) k(i) \tag{12}  \label{eq12}
+\end{align*}
+where:
+\begin{itemize}
+\item $A_{L}, A_{M}, A_{H}$ are skill productivity parameters. \medskip
+\item $ \alpha_{L}(i), \alpha_{M}(i), \alpha_{H}(i)$ are task productivity schedules determining comparative advantage in task production. \medskip
+\item $ l(i), m(i), h(i)$ are the number of workers allocated to task $i$.
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Comparative advantage in task production}
+\begin{block}{Assumption 1}
+$ \alpha_{L}(i)/\alpha_{M}(i)$ and $ \alpha_{M}(i)/\alpha_{H}(i)$ are continuously differentiable and strictly decreasing in $i$.
+\end{block}
+\begin{itemize}
+\item This is an assumption about the \textit{relative} productivity of workers in doing different tasks. \medskip
+\item This assumption results in the allocation of workers across tasks based on their comparative advantage (as in Roy [51]).\medskip
+\item The rationale is that higher $i$ correspond to ``more complex'' tasks for which more skilled workers have a comparative advantage.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Clearing factor markets}
+\begin{itemize}
+\item Labor markets clearing requires:
+\[
+\int_{0}^{1} l(i)di = L \text{ and } \int_{0}^{1} m(i)di = M \text{ and } \int_{0}^{1} h(i)di = H \tag{13}  \label{eq13}
+\]
+\item The role of capital as a factor of production: \medskip
+\begin{itemize}
+\item \underline{Equilibrium without machines} (sections 4.2-4.4): \\
+$ \alpha_{K}(i) = 0$ for all $i$. \medskip
+\item \underline{Task replacing technologies} (section 4.5): \\
+$ \alpha_{K}(i) \neq 0$ for some $i$.
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\subsection{4.2 Equilibrium without machines}
+
+\begin{frame}{4. A Ricardian model of the labor market}
+\begin{itemize}
+\item[\textcolor{gray}{4.1}] \textcolor{gray}{Environment}
+\item[\textcolor{red}{4.2}] \textcolor{red}{Equilibrium without machines}
+\item[\textcolor{gray}{4.3}] \textcolor{gray}{Special cases}
+\item[\textcolor{gray}{4.4}] \textcolor{gray}{Comparative statics}
+\item[\textcolor{gray}{4.5}] \textcolor{gray}{Task replacing technologies}
+\item[\textcolor{gray}{4.6}] \textcolor{gray}{Endogenous choice of skill supply}
+\item[\textcolor{gray}{4.7}] \textcolor{gray}{Offshoring}
+\item[\textcolor{gray}{4.8}] \textcolor{gray}{Directed technical change}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Task thresholds}
+\begin{block}{Lemma 1}
+In any equilibrium there exist $I_{L}$ and $I_{H}$ such that $0 < I_{L} < I_{H} < 1$ and for any $i < I_{L}$ we have that $m(i)=h(i)=0$, for any $i \in (I_{L},I_{H})$ we have that $l(i)=h(i)=0$, and for any $i > I_{H}$ we have that $l(i)=m(i)=0$.
+\end{block}
+Thresholds $I_{L}, I_{H}$ determine the allocation of tasks to skill: \medskip
+\begin{itemize}
+\item $i < I_{L}$ will be performed by $L$ workers (Manual). \medskip
+\item $I_{L} \leq i \leq I_{H}$ will be performed by $M$ workers (Routine). \medskip
+\item $i > I_{H}$ will be performed by $H$ workers (Abstract).
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Task thresholds $I_{L}$ and $I_{H}$ must exist}
+\begin{itemize}
+\item Given that $\alpha_{L}(i) / \alpha_{M}(i)$ is strictly decreasing in $i$, there must exist a task $I_{L}$ such that the unit cost of producing $I_{L}$ is the same for $L$ and $M$ workers:
+\[
+\frac{w_{L}}{A_{L} \alpha_{L}(I_{L})} = \frac{w_{M}}{A_{M} \alpha_{M}(I_{L})}
+\]
+\item Given that $\alpha_{M}(i) / \alpha_{H}(i)$ is strictly decreasing in $i$, there must exist a task $I_{H}$ such that the unit cost of producing $I_{H}$ is the same for $M$ and $H$ workers:
+\[
+\frac{w_{M}}{A_{M} \alpha_{M}(I_{H})} = \frac{w_{H}}{A_{M} \alpha_{M}(I_{H})}
+\]
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Three equilibrium conditions}
+\begin{enumerate}
+\item[E1.] Law of one price for skill. \bigskip
+\item[E2.] Equal task cost shares.\bigskip
+\item[E3.] No arbitrage across skills at task thresholds. \bigskip
+\item[E4.] Price of the final good equals marginal cost.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{E1. Law of one price for skill}
+\begin{itemize}
+\item Denote $p(i)$ as the price of task $i$. \medskip
+\item All tasks by $j=L,M,H$ workers must pay the same wage $w_{j}$:
+\begin{tcolorbox}
+\[
+w_{j} = p(i)A_{j} \alpha_{j}(i) \text{ for } j = L,M,H
+\]
+\end{tcolorbox}
+\item This has a convenient implication:
+\[
+p(i) \alpha_{L}(i) = p(i') \alpha_{L}(i') \equiv P_{L} \text{ for any } i,i' < I_{L} \tag{14} \label{eq14}
+\]
+\[
+p(i) \alpha_{M}(i) = p(i') \alpha_{M}(i') \equiv P_{M} \text{ for any } I_{L} < i,i' < I_{H} \tag{15} \label{eq15}
+\]
+\[
+p(i) \alpha_{H}(i) = p(i') \alpha_{H}(i') \equiv P_{H} \text{ for any } i > I_{H} \tag{16} \label{eq16}
+\]
+\end{itemize}
+\end{frame}
+
+\begin{frame}{E2. Equal task cost shares within skill groups}
+\begin{itemize}
+\item Cobb-Douglas technology implies:
+\[
+p(i)y(i) = p(i')y(i') \text{ for any } i,i' \in [0,1] \tag{17} \label{eq17}
+\]
+\item Within the group of $L$ workers this implies:
+\[
+p(i) \alpha_{L}(i) l(i) = p(i') \alpha_{L}(i') l(i') \text{ for any } i,i' < I_{L}
+\]
+\item From the law of one price for skill we had that:
+\[
+p(i) \alpha_{L}(i) = p(i') \alpha_{L}(i') \equiv P_{L}
+\]
+\item This implies:
+\[
+l(i) = l(i') \text{ for any } i,i' < I_{L}
+\]
+\end{itemize}
+\end{frame}
+
+\begin{frame}{E2. Equal task cost shares within skill group}
+\begin{itemize}
+\item Within skill groups, we had that:
+\[
+l(i) = l(i') \text{ for any } i,i' < I_{L}
+\]
+\[
+m(i) = m(i') \text{ for any } I_{L} < i,i' < I_{H}
+\]
+\[
+h(i) = h(i') \text{ for any } i,i' > I_{H}
+\]
+\item Using the market clearing conditions, this gives:
+\begin{tcolorbox}
+\[
+l(i) = \frac{L}{I_{L}} \text{ for any } i < I_{L} \tag{18} \label{eq18}
+\]
+\[
+m(i) = \frac{M}{I_{H} - I_{L}} \text{ for any } I_{L} < i < I_{H} \tag{19} \label{eq19}
+\]
+\[
+h(i) = \frac{H}{1 - I_{H}} \text{ for any } i > I_{H} \tag{20} \label{eq20}
+\]
+\end{tcolorbox}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{E2. Equal task cost shares between skill group}
+\begin{itemize}
+\item Cobb-Douglas technology implies:
+\[
+p(i)y(i) = p(i')y(i') \text{ for any } i,i' \in [0,1] \tag{17} \label{eq17}
+\]
+\item Between $M$ and $H$ workers this implies:
+\[
+p(i) \alpha_{M}(i) A_{M} m(i) = p(i') \alpha_{H}(i') A_{H} h(i')
+\]
+\item Using definitions and results from above:
+\[
+\frac{P_{M}A_{M}M}{I_{H} - I_{L}} = \frac{P_{H}A_{H}H}{1 - I_{H}}
+\]
+\[
+\frac{P_{H}}{P_{M}} = \left[\frac{A_{H}H}{1 - I_{H}}\right] ^{-1} \left[\frac{A_{M}M}{I_{H} - I_{L}} \right] \tag{21} \label{eq21}
+\]
+\end{itemize}
+\end{frame}
+
+\begin{frame}{E2. Equal task cost shares between skill group}
+\begin{itemize}
+\item We had that:
+\[
+\frac{P_{H}}{P_{M}} = \left[\frac{A_{H}H}{1 - I_{H}}\right] ^{-1} \left[\frac{A_{M}M}{I_{H} - I_{L}} \right] \tag{21} \label{eq21}
+\]
+\item Similarly, comparing tasks between $L$ and $M$ workers gives:
+\[
+\frac{P_{M}}{P_{L}} = \left[\frac{A_{M}M}{I_{H} - I_{L}}\right] ^{-1} \left[\frac{A_{L}L}{I_{L}} \right] \tag{22} \label{eq22}
+\]
+\item We can use these equations to solve for relative wages as a function of task thresholds.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{E2. Equal task cost shares between skill group}
+\begin{itemize}
+\item Using eq. (21), we get that:
+\begin{tcolorbox}
+\[
+\frac{w_{H}}{w_{M}} = \frac{P_{H}A_{H}}{P_{M}A_{M}} = \left[\frac{1-I_{H}}{I_{H}-I_{L}} \right] \left[ \frac{M}{H} \right] \tag{26} \label{eq26}
+\]
+\end{tcolorbox}
+\item Using eq. (22), we get that:
+\begin{tcolorbox}
+\[
+\frac{w_{M}}{w_{L}} = \frac{P_{M}A_{M}}{P_{L}A_{L}} = \left[\frac{I_{H}-I_{L}}{I_{L}} \right] \left[ \frac{L}{M} \right] \tag{27} \label{eq27}
+\]
+\end{tcolorbox}
+\item Given $I_{L}$ and $I_{H}$, these equations solve for relative wages.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{E3. No arbitrage across skills at task thresholds}
+\begin{itemize}
+\item Unit cost to produce $I_{H}$ must be the same for $M$ or $H$:
+\[
+\frac{w_{H}}{w_{M}} = \frac{A_{H} \alpha_{H}(I_{H})}{A_{M} \alpha_{M}(I_{H})} = \left[\frac{1-I_{H}}{I_{H}-I_{L}} \right] \left[ \frac{M}{H} \right] \tag{23} \label{eq23}
+\]
+\item Unit cost to produce $I_{L}$ must be the same for $L$ or $M$:
+\[
+\frac{w_{M}}{w_{L}}  = \frac{A_{M} \alpha_{M}(I_{L})}{A_{L} \alpha_{L}(I_{L})} = \left[\frac{I_{H}-I_{L}}{I_{L}} \right] \left[ \frac{L}{M} \right]  \tag{24} \label{eq24}
+\]
+\item These equations solve for $I_{L}$ and $I_{H}$. \medskip
+\item This solves for $l(i), m(i), h(i)$, $P_{H}/P_{M}, P_{M}/P_{L}$ and $w_{H}/w_{M}, w_{M}/w_{L}$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Summary of equilibrium}
+\begin{block}{Proposition 1}
+There exists a unique equilibrium summarized by $(I_{L}, I_{H}, P_{L}, P_{M}, P_{H}, w_{L}, w_{M}, w_{H})$.
+\end{block}
+\begin{itemize}
+\item There exist values of $I_{L}$ and $I_{H}$. Still required is proof that these values are unique. \medskip
+\item Knowing $I_{L}$ and $I_{H}$ directly solves for $l(i), m(i), h(i)$, $P_{H}/P_{M}, P_{M}/P_{L}$ and $w_{H}/w_{M}, w_{M}/w_{L}$. \medskip
+\item Solving for $P_{H}, P_{M}, P_{L}$ and $w_{H}, w_{M}, w_{L}$ requires solving for the equilibrium price of the final good $P$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Uniqueness of $I_{L}$ and $I_{H}$}
+\begin{itemize}
+\item Rewrite the no arbitrage condition for $I_{H}$ as:
+\[
+\frac{A_{M} \alpha_{M}(I_{H})M}{A_{H} \alpha_{H}(I_{H})H} \left[ \frac{1 - I_{H}}{I_{H}-I_{L}} \right] =1 \tag{23'} \label{eq23'}
+\]
+\item Rewrite the no arbitrage condition for $I_{L}$ as:
+\[
+\frac{A_{L} \alpha_{L}(I_{L})L}{A_{M} \alpha_{M}(I_{L})M} \left[ \frac{I_{H} - I_{L}}{I_{L}} \right] = 1 \tag{24'} \label{eq24'}
+\]
+\item Both are upward sloping in ($I_{L}, I_{H}$)-space but eq. (23') is everywhere steeper than eq. (24') given Assumption 1.
+\end{itemize}
+\end{frame}
+
+\newpage
+\begin{center}
+\begin{figure}
+\includegraphics[height=8.5cm,width=\textwidth]{figure22.png}
+\end{figure} 
+\end{center}
+\newpage
+
+\begin{frame}{Equilibrium allocation of skills to tasks}
+\begin{itemize}
+\item Rewrite the no arbitrage condition for $I_{H}$ as:
+\[
+\frac{A_{H}H}{A_{M}M} = \frac{1-I_{H}}{I_{H} - I_{L}} \frac{\alpha_{M}(I_{H})}{\alpha_{H}(I_{H})}  \tag{29} \label{eq29}
+\]
+which is decreasing in $I_{H}$ for given $I_{L}$. \medskip
+\item Rewrite the no arbitrage condition for $I_{L}$ as:
+\[
+\frac{A_{M}M}{A_{L}L} = \frac{I_{H} - I_{L}}{I_{L}} \frac{\alpha_{L}(I_{L})}{\alpha_{M}(I_{L})} 
+\]
+which is decreasing in $I_{L}$ for given $I_{H}$.
+\end{itemize}
+\end{frame}
+
+\newpage
+\begin{center}
+\begin{figure}
+\includegraphics[height=8.5cm,width=\textwidth]{figure23.png}
+\end{figure} 
+\end{center}
+\newpage
+
+\begin{frame}{E.4 Price of the final good equals marginal cost}
+\begin{itemize}
+\item Profit maximization implies:
+\[
+P = MC= \exp \left[ \int_{0}^{1} \ln(p(i))di \right]  \equiv 1
+\]
+\item Rewriting gives:
+\begin{align*}
+\ln P & = \int_{0}^{I_{L}} [\ln(P_{L}) - \ln(\alpha_{L}(i))]di + \int_{I_{L}}^{I_{H}} [\ln(P_{M}) - \ln(\alpha_{M}(i))]di \\
+& + \int_{I_{H}}^{1} [\ln(P_{H}) - \ln(\alpha_{H}(i))]di= 0 \tag{28} \label{eqs28}
+\end{align*}
+which, together with eqs. (21)-(22), solves for $ P_{L}, P_{M}, P_{H} $. \medskip
+\item This solves for $w_{j}=P_{j}A_{j} $ for $ j=L,M,H $.
+\end{itemize}
+\end{frame}
+
+\subsection{4.3 Special cases}
+
+\begin{frame}{4. A Ricardian model of the labor market}
+\begin{itemize}
+\item[\textcolor{gray}{4.1}] \textcolor{gray}{Environment}
+\item[\textcolor{gray}{4.2}] \textcolor{gray}{Equilibrium without machines}
+\item[\textcolor{red}{4.3}] \textcolor{red}{Special cases}
+\item[\textcolor{gray}{4.4}] \textcolor{gray}{Comparative statics}
+\item[\textcolor{gray}{4.5}] \textcolor{gray}{Task replacing technologies}
+\item[\textcolor{gray}{4.6}] \textcolor{gray}{Endogenous choice of skill supply}
+\item[\textcolor{gray}{4.7}] \textcolor{gray}{Offshoring}
+\item[\textcolor{gray}{4.8}] \textcolor{gray}{Directed technical change}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Special cases}
+\begin{itemize}
+\item We discuss 2 special cases: \medskip
+\begin{enumerate} \medskip
+\item A model with a fixed task set for L-type workers. \medskip
+\item Assuming two skill groups and simple versions of comparative advantage schedules (as in Acemoglu \& Zilibotti [01]).\medskip
+\end{enumerate}
+\item There are other interesting cases: \medskip
+\begin{itemize}
+\item Assuming a discrete set of tasks instead and a continuum of skills (as in Autor, Levy \& Murnane [03]). \medskip
+\item Assuming CES instead of Cobb-Douglas task production function (as in Acemoglu \& Restrepo [18,19])
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Special case 1: Fixed task set for L-type workers}
+\begin{itemize}
+\item Assume 3 types of workers: $L,M,H$. \medskip
+\item Assume the following comparative advantage schedule for low skill workers:
+\[
+\alpha_{L}(i) = 
+\begin{cases}
+\tilde{\alpha}_{L} \text{ if } i \leq \tilde{I}_{L} \\
+0 \text{ if } i > \tilde{I}_{L} \\
+\end{cases}
+\]
+where $\tilde{\alpha}_{L} $ is large and $ \tilde{I}_{L}$ is small. \medskip
+\item This fixes  $I_{L} = \tilde{I}_{L}$ while $I_{H}$ is determined as before from an arbitrage condition. \medskip
+\item This is essentially a two-skill version of the model.  
+\end{itemize}
+\end{frame}
+
+\newpage
+\begin{center}
+\begin{figure}
+\includegraphics[height=8.5cm,width=\textwidth]{figure24.png}
+\end{figure} 
+\end{center}
+\newpage
+
+\begin{frame}{Special case 2: Assuming two skill groups}
+\begin{itemize}
+\item Assume there are only 2 types of workers, low and high skill. \medskip
+\item Assume the following comparative advantage schedules:
+\[
+\alpha_{L}(i) = 1-i \text{ and } \alpha_{H}(i)=i
+\]
+\item This model is isomorphic to the canonical model with $\sigma =2$:
+\begin{align*}
+\omega \equiv \frac{w_{H}}{w_{L}} & = \left[ \frac{A_{H}}{A_{L}} \right] ^{ \frac{ 1}{2}}  \left[ \frac{H}{L} \right] ^ {-\frac{1}{ 2}} \tag{5} \label{eq5} \\ 
+& = \left[ \frac{A_{H}}{A_{L}} \right] ^{ \frac{ \sigma -1}{ \sigma}}  \left[ \frac{H}{L} \right] ^ {-\frac{1}{ \sigma}}  
+\end{align*}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Special case 2: Assuming two skill groups}
+\begin{itemize}
+\item Equal division of labor among tasks within skill groups gives:
+\[
+l(i) = \frac{L}{I} \text{ and } h(i) = \frac{H}{1-I}
+\]
+\item Comparing tasks between skill groups gives:
+\[
+\frac{P_{H}}{P_{L}} = \left[ \frac{A_{H}H}{1-I} \right]^{-1} \left[ \frac{A_{L}L}{I} \right]
+\]
+\item The relative wage is given by:
+\[
+\frac{w_{H}}{w_{L}} = \frac{P_{H}A_{H}}{P_{L}A_{L}} = \left[ \frac{H}{1-I} \right]^{-1} \left[ \frac{L}{I} \right]
+\]
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Special case 2: Assuming two skill groups}
+\begin{itemize}
+\item No arbitrage across skill gives:
+\[
+\frac{A_{L} \alpha_{L}(I)L}{I} = \frac{A_{H} \alpha_{H}(I)H}{1-I} 
+\]
+\item Re-writing and using that $\alpha_{L}(I)=1-I$ and $\alpha_{H}(I)=I$ gives:
+\[
+\frac{1-I}{I} = \left[ \frac{A_{H}H}{A_{L}L} \right]^{\frac{1}{2}}
+\]
+\item Re-writing the relative wage gives using this expression gives:
+\[
+\frac{w_{H}}{w_{L}} =  \left[ \frac{A_{H}}{A_{L}} \right]^{\frac{1}{2}}  \left[ \frac{H}{L} \right]^{-\frac{1}{2}}
+\]
+\end{itemize}
+\end{frame}
+
+\subsection{4.4 Comparative statics}
+
+\begin{frame}{4. A Ricardian model of the labor market}
+\begin{itemize}
+\item[\textcolor{gray}{4.1}] \textcolor{gray}{Environment}
+\item[\textcolor{gray}{4.2}] \textcolor{gray}{Equilibrium without machines}
+\item[\textcolor{gray}{4.3}] \textcolor{gray}{Special cases}
+\item[\textcolor{red}{4.4}] \textcolor{red}{Comparative statics}
+\item[\textcolor{gray}{4.5}] \textcolor{gray}{Task replacing technologies}
+\item[\textcolor{gray}{4.6}] \textcolor{gray}{Endogenous choice of skill supply}
+\item[\textcolor{gray}{4.7}] \textcolor{gray}{Offshoring}
+\item[\textcolor{gray}{4.8}] \textcolor{gray}{Directed technical change}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Basic comparative statics}
+\begin{itemize}
+\item Taking logs of eq. (23') gives:
+\begin{align*}
+\ln (A_{M}/A_{H}) + \beta_{H}(I_{H}) + \ln (M/H) \\
++ \ln ([1 - I_{H}]/[I_{H} - I_{L}]) = 0  \tag{32} \label{eq32}
+\end{align*}
+with $ \beta_{H}(I_{H}) \equiv \ln ( \alpha_{M}(I_{H}) / \alpha_{H}(I_{H}))$. \medskip 
+\item Taking logs of eq. (24') gives:
+\begin{align*}
+\ln (A_{L}/A_{M}) + \beta_{L}(I_{L}) + \ln (L/M) \\
++ \ln ([I_{H} - I_{L}]/I_{L}) = 0 \tag{33} \label{eq33}
+\end{align*}
+with $ \beta_{L}(I_{L}) \equiv \ln ( \alpha_{L}(I_{L}) / \alpha_{M}(I_{L}))$.
+\end{itemize}
+\end{frame}
+
+\newpage
+\begin{center}
+\begin{figure}
+\includegraphics[height=8.5cm,width=\textwidth]{figure25.png}
+\end{figure} 
+\end{center}
+\newpage
+
+\newpage
+\begin{center}
+\begin{figure}
+\includegraphics[height=8.5cm,width=\textwidth]{figure26.png}
+\end{figure} 
+\end{center}
+\newpage
+
+\begin{frame}{Proposition 2.1: The response of task allocation to $A_{H},H$}
+\begin{enumerate}
+\item Task range of $H$ workers:
+\[
+\frac{dI_{H}}{d \ln (A_{H})} = \frac{d I_{H}}{d \ln (H)} < 0
+\]
+\item Task range of $L$ workers:
+\[
+\frac{dI_{L}}{d \ln (A_{H})} = \frac{d I_{L}}{d \ln (H)} < 0
+\]
+\item Task range for $M$ workers:
+\[
+\frac{d (I_{H} - I_{L})}{d \ln (A_{H})} = \frac{d (I_{H} - I_{L})}{d \ln (H)} < 0
+\]
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Proposition 2.1: The response of task allocation to $A_{L},L$}
+\begin{enumerate}
+\item Task range of $H$ workers:
+\[
+\frac{dI_{H}}{d \ln (A_{L})} = \frac{d I_{H}}{d \ln (L)} > 0
+\]
+\item Task range of $L$ workers:
+\[
+\frac{dI_{L}}{d \ln (A_{L})} = \frac{d I_{L}}{d \ln (L)} > 0
+\]
+\item Task range for $M$ workers:
+\[
+\frac{d (I_{H} - I_{L})}{d \ln (A_{L})} = \frac{d (I_{H} - I_{L})}{d \ln (L)} < 0
+\]
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Proposition 2.1: The response of task allocation to $A_{M},M$}
+\begin{enumerate}
+\item Task range of $H$ workers:
+\[
+\frac{dI_{H}}{d \ln (A_{M})} = \frac{d I_{H}}{d \ln (M)} > 0
+\]
+\item Task range of $L$ workers:
+\[
+\frac{dI_{L}}{d \ln (A_{M})} = \frac{d I_{L}}{d \ln (M)} < 0
+\]
+\item Task range for $M$ workers:
+\[
+\frac{d (I_{H} - I_{L})}{d \ln (A_{M})} = \frac{d (I_{H} - I_{L})}{d \ln (M)} > 0
+\]
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Proposition 2.2: Response of relative wages to skill supplies}
+\begin{enumerate}
+\item An increase in $H$:
+\[
+\frac{d \ln (w_{H}/w_{M})}{d \ln (H)} < 0 \text{ and } \frac{d \ln (w_{H}/w_{L})}{d \ln (H)} < 0
+\]
+\item An increase in $M$:
+\[
+\frac{d \ln (w_{H}/w_{M})}{d \ln (M)} > 0 \text{ and } \frac{d \ln (w_{M}/w_{L})}{d \ln (M)} < 0
+\]
+\item An increase in $L$:
+\[
+\frac{d \ln (w_{M}/w_{L})}{d \ln (L)} > 0  \text{ and } \frac{d \ln (w_{H}/w_{L})}{d \ln (L)} > 0
+\]
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Proposition 2.3: Response of relative wages to $A_{H}, A_{M}, A_{L}$}
+\begin{enumerate}
+\item An increase in $A_{H}$:
+\[
+\frac{d \ln (w_{H}/w_{M})}{d \ln (A_{H})} > 0  \text{ and } \frac{d \ln (w_{H}/w_{L})}{d \ln (A_{H})} > 0
+\]
+\item An increase in $A_{M}$:
+\[
+\frac{d \ln (w_{H}/w_{M})}{d \ln (A_{M})} < 0 \text{ and } \frac{d \ln (w_{M}/w_{L})}{d \ln (A_{M})} > 0
+\]
+\item An increase in $A_{L}$:
+\[
+\frac{d \ln (w_{M}/w_{L})}{d \ln (A_{L})} < 0 \text{ and } \frac{d \ln (w_{H}/w_{L})}{d \ln (A_{L})} < 0
+\]
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Propositions 2.2 and 2.3: Response of $w_{H}/w_{L}$ to $M,A_{M}$}
+\begin{itemize}
+\item This depends critically on the comparative advantages of marginal $H$ and $L$ workers in doing $M$ tasks, given by:
+\[
+\beta_{H}(I_{H}) \equiv \ln ( \alpha_{M}(I_{H}) / \alpha_{H}(I_{H}))
+\]
+\[
+\beta_{L}(I_{L}) \equiv \ln ( \alpha_{L}(I_{L}) / \alpha_{M}(I_{L}))
+\]
+\item Define:
+\[
+\beta_{L}'(I_{L}) I_{L} \equiv \partial \beta_{L}(I_{L})/ \partial I_{L}  
+\]
+\[
+\beta_{H}'(I_{H}) I_{H} \equiv \partial \beta_{H}(I_{H})/ \partial I_{H}  
+\]
+\item If $ \beta_{H}'(I_{H})$ is high relative to $\beta_{L}'(I_{L})$ in absolute value, $H$ workers have a relatively strong comparative advantage for tasks above $I_{H}$ compared to $L$ workers for tasks below $I_{L}$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Propositions 2.2 and 2.3: Response of $w_{H}/w_{L}$ to $M,A_{M}$}
+\begin{itemize}
+\item An increase in $M$: 
+\[
+\frac{d \ln (w_{H}/w_{L})}{d \ln (M)} \gtrless 0 \text{ iff } | \beta_{H}'(I_{H}) (1 - I_{H})| \gtrless |\beta_{L}'(I_{L}) I_{L}|
+\]
+\item An increase in $A_{M}$:
+\[
+\frac{d \ln (w_{H}/w_{L})}{d \ln (A_{M})} \gtrless 0 \text{ iff } | \beta_{H}'(I_{H}) (1 - I_{H})| \gtrless |\beta_{L}'(I_{L}) I_{L}|
+\]
+\item If $ \beta_{H}'(I_{H})$ is high relative to $\beta_{L}'(I_{L})$ in absolute value, an increase in $M$ or $A_{M}$ displaces $L$ workers more than $H$ workers (and $I_{L}$ falls more than $I_{H}$ rises) such that $w_{H}/w_{L}$ rises.
+\end{itemize}
+\end{frame}
+
+\subsection{4.5 Task replacing technologies}
+
+\begin{frame}{4. A Ricardian model of the labor market}
+\begin{itemize}
+\item[\textcolor{gray}{4.1}] \textcolor{gray}{Environment}
+\item[\textcolor{gray}{4.2}] \textcolor{gray}{Equilibrium without machines}
+\item[\textcolor{gray}{4.3}] \textcolor{gray}{Special cases}
+\item[\textcolor{gray}{4.4}] \textcolor{gray}{Comparative statics}
+\item[\textcolor{red}{4.5}] \textcolor{red}{Task replacing technologies}
+\item[\textcolor{gray}{4.6}] \textcolor{gray}{Endogenous choice of skill supply}
+\item[\textcolor{gray}{4.7}] \textcolor{gray}{Offshoring}
+\item[\textcolor{gray}{4.8}] \textcolor{gray}{Directed technical change}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Automation of routine labor tasks done by $M$-type workers}
+\begin{itemize}
+\item Labor tasks most subject to machine displacement are routine or codifiable. \medskip
+\item These tasks are primarily done by $M$-type workers. \medskip
+\item Assume a range of tasks $[I',I''] \subset [I_{L},I_{H}]$ for which $\alpha_{K}(i)$ increases sufficiently (with fixed cost of capital $r$) so that they are now more economically performed by machines. \medskip
+\item For all $i \notin [I',I'']$, continue to assume that $\alpha_{K}(i)=0$. 
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Changes in task thresholds}
+\begin{block}{Proposition 3}
+Suppose we start with an equilibrium characterized by thresholds $[I_{L},I_{H}]$ and technical change implies that the tasks in the range $[I',I''] \subset [I_{L},I_{H}]$ are now performed by machines. \\ \medskip
+Then: \\ \medskip
+After the introduction of machines, there exists a new equilibrium characterized by new thresholds $\hat{I}_{L}$ and $\hat{I}_{H}$ such that $0 < \hat{I}_{L} < I' < I'' < \hat{I}_{H} < 1$ and for any $i < \hat{I}_{L}$ we have that $m(i)=h(i)=0$ and $l(i)=L/\hat{I}_{L}$; for any $i \in (\hat{I}_{L},I') \cup (I'',\hat{I}_{H})$, $l(i)=h(i)=0$ and $m(i)=M/(\hat{I}_{H} - I'' + I' - \hat{I}_{L})$; and for any $i > \hat{I}_{H}$,  $l(i)=m(i)=0$ and $h(i)=H/(1-\hat{I}_{H})$.
+\end{block}
+\end{frame}
+
+\begin{frame}{Changes in relative wages}
+\begin{block}{Proposition 4}
+Suppose we start with an equilibrium characterized by thresholds $[I_{L},I_{H}]$ and technical change implies that the tasks in the range $[I',I''] \subset [I_{L},I_{H}]$ are now performed by machines. \\ \medskip
+Then:
+\begin{enumerate}
+\item $w_{H}/w_{M}$ increases; \medskip
+\item $w_{M}/w_{L}$ decreases; \medskip
+\item $w_{H}/w_{L} \gtrless 0 $ if and only if $ | \beta_{H}'(I_{H}) (1 - I_{H})| \gtrless |\beta_{L}'(I_{L}) I_{L}| $.
+\end{enumerate}
+\end{block}
+\end{frame}
+
+\begin{frame}{Automation of routine labor tasks done by $M$-type workers}
+\begin{itemize}
+\item Focal case: \smallskip
+\begin{itemize}
+\item Routine tasks are of average complexity for humans. \smallskip
+\item Strong comparative advantage of $H$ relative to $L$ workers. \smallskip
+\end{itemize}
+\item If so, there is wage and employment polarization: \smallskip
+\begin{enumerate}
+\item Wages: \smallskip
+\begin{itemize}
+\item Middle wages fall relative to top and bottom. \smallskip
+\item Top rises relative to bottom.
+\end{itemize}
+\item Employment: \smallskip
+\begin{itemize}
+\item Declining labor input in middling routine tasks. \smallskip
+\item Middle-skill workers move disproportionately downward.
+\end{itemize}
+\end{enumerate}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Ricardian model: Summary}
+\begin{itemize}
+\item Model's inputs: \smallskip
+\begin{enumerate}
+\item Explicit distinction between skills and tasks. \smallskip
+\item Comparative advantage among workers in different tasks. \smallskip
+\item Multiple sources of competing task supplies. \smallskip
+\end{enumerate}
+\item What the model delivers: \smallskip
+\begin{enumerate}
+\item A natural concept of occupations. \smallskip
+\item Sorting of skill to tasks based on comparative advantage. \smallskip
+\item Reallocation of skill across tasks as technology changes.\smallskip
+\item Polarization of wages and employment.\smallskip
+\item Technological progress can decrease wage levels.
+\end{enumerate}
+\end{itemize}
+\end{frame}
+
+\subsection{4.6 Endogenous choice of skill supply}
+
+\begin{frame}{4. A Ricardian model of the labor market}
+\begin{itemize}
+\item[\textcolor{gray}{4.1}] \textcolor{gray}{Environment}
+\item[\textcolor{gray}{4.2}] \textcolor{gray}{Equilibrium without machines}
+\item[\textcolor{gray}{4.3}] \textcolor{gray}{Special cases}
+\item[\textcolor{gray}{4.4}] \textcolor{gray}{Comparative statics}
+\item[\textcolor{gray}{4.5}] \textcolor{gray}{Task replacing technologies}
+\item[\textcolor{red}{4.6}] \textcolor{red}{Endogenous choice of skill supply}
+\item[\textcolor{gray}{4.7}] \textcolor{gray}{Offshoring}
+\item[\textcolor{gray}{4.8}] \textcolor{gray}{Directed technical change}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Endogenous choice of skill supply}
+\begin{itemize}
+\item We have focussed on the substitution of skills across tasks. \medskip
+\item A complementary force is substitution of workers across skills. \medskip
+\item In response to changes in technology or factor supplies, workers may change the types of skills they supply. \medskip
+\item If machines replace medium skill workers, the supply to especially low skills will increase. \medskip
+\item This gives a richer explanation of observed wage and job polarization.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Environment}
+\begin{itemize}
+\item Each worker $j$ is endowed with some amount of low skill $l^{j}$, medium skill $m^{j}$ and high skill $h^{j}$. \medskip
+\item Workers have one unit of time subject to a skill allocation constraint:
+\[
+t_{l}^{j} + t_{m}^{j} + t_{h}^{j} \leqslant 1 
+\]
+\item The worker's income is:
+\[
+w_{L}t_{l}^{j}l_{j} + w_{M}t_{m}^{j}m_{j} + w_{H}t_{h}^{j}h_{j} 
+\]
+\item A worker will prefer to allocate all her time to one skill.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Supply to skills}
+\begin{itemize}
+\item The supply to skills is given by:
+\[
+L = \int_{j \in E_{l}} l^{j}dj \text{  ;  } M = \int_{j \in E_{m}} m^{j}dj \text{  ;  } H = \int_{j \in E_{h}} h^{j}dj
+\]
+with $E_{l}, E_{m}, E_{h}$ the sets of workers choosing to supply their labor to low, medium and high skills respectively.
+\item A worker will choose to be in set $E_{h}$ only if:
+\[
+\frac{l^{j}}{h^{j}} \leq \frac{w_{H}}{w_{L}} \text{ and } \frac{m^{j}}{h^{j}} \leq \frac{w_{H}}{w_{M}}
+\]
+with similar inequalities for sets $E_{m}$ and $E_{l}$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Comparative advantage in skill}
+\begin{block}{Assumption 2}
+$h^{j}/m^{j}$ and $m^{j}/l^{j}$ are both strictly decreasing in $j$ and $ \lim_{j \rightarrow 0} h^{j}/m^{j} = \infty$ and $ \lim_{j \rightarrow 1} m^{j}/l^{j} = 0$ 
+\end{block}
+\begin{itemize}
+\item Lower indexed workers have a comparative advantage in high skill and higher indexed workers have a comparative advantage in low skill. \medskip
+\item At the extremes these comparative advantages are strong enough that there will always be some workers choosing to supply high and low skills.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Worker thresholds}
+\begin{block}{Lemma 2}
+For any ratios of wages $w_{H}/w_{M}$ and $w_{M}/w_{L}$, there exist $J^{*}(w_{H}/w_{M})$ and $J^{**}(w_{M}/w_{L})$ such that:
+\begin{itemize}
+\item $t_{h}^{j} = 1$ for all $j < J^{*}(w_{H}/w_{M})$
+\item $t_{m}^{j} = 1$ for all $j \in ( J^{*}(w_{H}/w_{M}), J^{**}(w_{M}/w_{L}))$
+\item $t_{l}^{j} = 1$ for all $j >  J^{**}(w_{M}/w_{L})$
+\end{itemize}
+$J^{*}(w_{H}/w_{M})$ and $J^{**}(w_{M}/w_{L})$ are both strictly increasing in their arguments. 
+\end{block}
+$J^{*}(w_{H}/w_{M})$ and $J^{**}(w_{M}/w_{L})$ are defined such that:
+\[
+\frac{m^{J^{*}(w_{H}/w_{M})}}{h^{J^{*}(w_{H}/w_{M})}}=\frac{w_{H}}{w_{M}} \text{ and } \frac{l^{J^{**}(w_{M}/w_{L})}}{m^{J^{**}(w_{M}/w_{L})}}=\frac{w_{M}}{w_{L}}
+\]
+\end{frame}
+
+\begin{frame}{Relative supply of skill}
+The supply to skills is given by: \medskip
+\[
+L = \int_{J^{**}(w_{M}/w_{L})}^{1} l^{j}dj ; M = \int_{J^{*}(w_{H}/w_{M})}^{J^{**}(w_{M}/w_{L})} m^{j}dj ; H = \int_{0}^{J^{*}(w_{H}/w_{M})} h^{j}dj
+\]
+\begin{itemize}
+\item An increase in $w_{H}/w_{M}$, given $w_{M}/w_{L}$, increases $H/M$ given that $J^{*}(w_{H}/w_{M})$ is increasing in $w_{H}/w_{M}$. \medskip
+\item An increase in $w_{M}/w_{L}$, given $w_{H}/w_{M}$, increases $M/L$ given that $J^{**}(w_{M}/w_{L})$ is increasing in $w_{M}/w_{L}$.
+\end{itemize}
+We have two upward sloping relative supply curves. 
+\end{frame}
+
+\begin{frame}{Equilibrium with endogenous supply of skill}
+\begin{block}{Proposition 5}
+In the model with endogenous supplies, there exists a unique equilibrium summarized by $(I_{L}, I_{H}$, $P_{L}, P_{M}, P_{H}$, $w_{L}, w_{M}, w_{H}$, $J^{*}(w_{H}/w_{M}), J^{**}(w_{M}/w_{L})$, $L,M,H)$.
+\end{block}
+Proof: To prove uniqueness of the equilibrium requires a little more work and is relegated to the Theoretical Appendix.
+\end{frame}
+
+\begin{frame}{Comparative statics and interpretation}
+\begin{itemize}
+\item Following the automation of routine tasks, the reallocation of skills across tasks resulted in wage and employment polarization. \medskip
+\item In response to these changes, some workers will also change their skill supply away from medium skills. \medskip
+\item If the more elastic margin is between medium and low skills, a significant fraction of workers previously supplying medium skills will now supply low skill. \medskip
+\item This gives a richer explanation of observed wage and employment polarization.
+\end{itemize}
+\end{frame}
+
+\subsection{4.7 Offshoring}
+
+\begin{frame}{4. A Ricardian model of the labor market}
+\begin{itemize}
+\item[\textcolor{gray}{4.1}] \textcolor{gray}{Environment}
+\item[\textcolor{gray}{4.2}] \textcolor{gray}{Equilibrium without machines}
+\item[\textcolor{gray}{4.3}] \textcolor{gray}{Special cases}
+\item[\textcolor{gray}{4.4}] \textcolor{gray}{Comparative statics}
+\item[\textcolor{gray}{4.5}] \textcolor{gray}{Task replacing technologies}
+\item[\textcolor{gray}{4.6}] \textcolor{gray}{Endogenous choice of skill supply}
+\item[\textcolor{red}{4.7}] \textcolor{red}{Offshoring}
+\item[\textcolor{gray}{4.8}] \textcolor{gray}{Directed technical change}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Offshoring}
+\begin{itemize}
+\item Besides technical progress, international trade is believed to have a major impact on labor markets. \medskip
+\item Instead of simply trading finished products, there has been a greater tendency to engage in trade in tasks through offshoring. \medskip
+\item Our analysis of technological progress directly translates to offshoring of routine and codifiable tasks (Proposition 6). \medskip
+\item The task-based model provides a rich and unified framework to analyse the impacts of labor supply, technological change, and trade on labor markets.
+\end{itemize}
+\end{frame}
+
+\subsection{4.8 Directed technical change}
+
+\begin{frame}{4. A Ricardian model of the labor market}
+\begin{itemize}
+\item[\textcolor{gray}{4.1}] \textcolor{gray}{Environment}
+\item[\textcolor{gray}{4.2}] \textcolor{gray}{Equilibrium without machines}
+\item[\textcolor{gray}{4.3}] \textcolor{gray}{Special cases}
+\item[\textcolor{gray}{4.4}] \textcolor{gray}{Comparative statics}
+\item[\textcolor{gray}{4.5}] \textcolor{gray}{Task replacing technologies}
+\item[\textcolor{gray}{4.6}] \textcolor{gray}{Endogenous choice of skill supply}
+\item[\textcolor{gray}{4.7}] \textcolor{gray}{Offshoring}
+\item[\textcolor{red}{4.8}] \textcolor{red}{Directed technical change}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Directed technical change}
+\begin{itemize}
+\item We have rewritten the canonical model by allowing for the endogenous allocation of skill groups across tasks. \medskip
+\item We have further extended the model by also allowing for the endogenous allocation of workers across skill groups. \medskip
+\item Another significant aspect of the economic environment absent from the canonical model is the endogeneity of technological progress to changes in supply. \medskip
+\item This is known as endogenous or directed technical change.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Directed technical change}
+In our Ricardian model, there can be different types of directed technical change in response to changes in supply:
+\begin{enumerate}
+\item $A_{L}, A_{M}, A_{H}$ respond to changes in skill supplies. This idea is analyzed in Acemoglu \& Zilibotti [01] for the special case of our model discussed in section 4.3.
+\item Comparative advantage schedules respond to changes in skill supplies:
+\[
+\alpha_{L}(i| \theta), \alpha_{M}(i| \theta), \alpha_{H}(i| \theta)
+\]
+with $\theta$ a variable that captures the endogenous choice of technology in the economy.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Factor biases in directed technical change}
+\begin{itemize}
+\item An increase in the supply of factor $f=L,M,H$ induces technical change that is \textbf{weakly biased} towards $f$ if:
+\[
+\frac{\partial w_{f}(E_{-f}, E_{f} | \theta )}{\partial \theta}\frac{d \theta}{d E_{f}} \geq 0
+\]
+\item An increase in the supply of factor $f=L,M,H$ induces technical change that is \textbf{strongly biased} towards $f$ if:
+\[
+\frac{d w_{f}(E_{-f}, E_{f} | \theta )}{d E_{f}} = \frac{\partial w_{f}(E_{-f}, E_{f} | \theta )}{\partial E_{f}} + \frac{\partial w_{f}(E_{-f}, E_{f} | \theta )}{\partial \theta}\frac{d \theta}{d E_{f}} > 0
+\]
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Weakly biased directed technical change}
+\begin{block}{Proposition 7}
+Under regularity conditions (which ensure the existence of a locally isolated equilibrium), an increase in the supply of factor $f$ (for $f \in {L,M,H}$) will induce technical change \textbf{weakly biased} towards that factor.
+\end{block}
+\begin{itemize}
+\item Proof: Acemoglu [07] \smallskip
+\item This is a strong theoretical reason to expect that the increase in educational attainment has induced the development of technologies favoring skilled workers. \smallskip
+\item It does not necessarily imply that the wage of skilled workers must have increased. 
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Strongly biased directed technical change}
+\begin{block}{Proposition 8}
+Under regularity conditions (which ensure the existence of a locally isolated equilibrium), an increase in the supply of factor $f$ (for $f \in {L,M,H}$) will induce technical change \textbf{strongly biased} towards that factor - thus increasing the wage of that factor - if and only if the aggregate production possibilities set of the economy is locally nonconvex in factor $f$ and technology $\theta$.
+\end{block}
+\begin{itemize}
+\item Proof: Acemoglu [07] \smallskip
+\item Local nonconvexity in $f$ and $ \theta$ is common in models of endogenous technological change. \smallskip
+\item The endogenous technology (or ``long-run'') demand for skill is upward sloping.
+\end{itemize}
+\end{frame}
+
+\section{5. Comparative Advantage and Wages: An Empirical Approach}
+
+\begin{frame}{Relative returns to skill versus tasks}
+\begin{itemize}
+\item The model predicts that following automation, $w_{L}/w_{M} \uparrow $ and $w_{H}/w_{M} \uparrow $, even as workers reallocate across tasks. \medskip
+\item However, changes in relative wages are not the same as changes in relative task prices (e.g. they can be different for tasks that are reallocated between skill groups). \medskip
+\item Regarding automation, the price of automatable tasks is expected to declined relative to abstract and manual tasks. \medskip
+\item But tasks and task prices are not directly observed in data.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Occupations as proxies for tasks}
+\begin{itemize}
+\item Let $ \gamma_{sejk}^{A}, \gamma_{sejk}^{R}, \gamma_{sejk}^{S}$ be the employment shares of Abstract, Routine and Service occupations in  demographic group $sejk$ (gender, education, age, region) in 1959. \medskip
+\item By construction, we have that:
+\[
+\gamma_{sejk}^{A} + \gamma_{sejk}^{R} + \gamma_{sejk}^{S} = 1 
+\]
+\item Assume that in 1959 these groups have self-selected into task specialities according to comparative advantage, taking as given overall skill supplies and task demands (reflecting also available technologies and trade opportunities).
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Wages, skill and tasks}
+\begin{itemize}
+\item Let $w_{sejkt} $ be the mean log wage of a demographic group in year $t$ and $\Delta w_{sejk\tau}$ the change in $w$ in decade $\tau$. \smallskip
+\item Estimate the regression model:
+\begin{align*}
+\Delta w_{sejk\tau} & = \sum_{t} \beta_{t}^{A} \gamma_{sejk}^{A} 1[\tau=t] + \sum_{t} \beta_{t}^{S} \gamma_{sejk}^{S} 1[\tau=t] \\ 
+& + \delta_{\tau} + \phi_{e} + \lambda_{j} + \pi_{k} + e_{sejk\tau} \tag{40} \label{eq40} 
+\end{align*}
+\item $\beta_{t}^{A}$ and $\beta_{t}^{S}$ are decade specific slopes on the initial occupation shares in wage changes by demographic group (relative to the omitted   routine task shares with effects absorbed by $ \delta_{\tau}$). \smallskip
+\item We expect that $\beta_{t}^{A}$ and $\beta_{t}^{S}$ will rise, and that $\delta_{t}$ will decline.
+\end{itemize}
+\end{frame}
+
+\newpage
+\begin{center}
+\begin{figure}
+\includegraphics[height=8.5cm,width=\textwidth]{table10a.png}
+\end{figure} 
+\end{center}
+\newpage
+
+\newpage
+\begin{center}
+\begin{figure}
+\includegraphics[height=8.5cm,width=\textwidth]{table10b.png}
+\end{figure} 
+\end{center}
+\newpage
+
+\section{6. Concluding Remarks}
+
+\begin{frame}{Conclusions}
+\begin{itemize}
+\item Declining real wages for some workers and job and wage polarization are problematic for the canonical model. \smallskip  
+\item A task-based framework, in which tasks are the basic unit of production and the allocation of skills to tasks is endogenous, provides a fruitful alternative theory. \smallskip 
+\item The basic framework can be extended to include e.g. worker's choice of skill supply and directed technological change. \smallskip 
+\item These models generate new ideas that can be tested empirically, but more needs to be done.
+\end{itemize}
+\end{frame}
+
+\end{document}

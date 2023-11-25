@@ -1,0 +1,465 @@
+\documentclass[notes=show]{beamer}
+\usepackage{mathpazo}
+\usepackage{hyperref}
+\usepackage{multimedia}
+\usepackage{tcolorbox}
+\usepackage{tikz}
+\usetikzlibrary{shadows}
+\usetheme{metropolis}
+\usecolortheme{default}
+\setbeamertemplate{itemize item}{%
+    \begin{tikzpicture}
+        \shade[ball color=black!100!yellow, preaction={fill=black,
+opacity=.00,transform canvas={xshift=1mm,yshift=-1mm, yscale=0.5}}] (0,0) circle (0.6ex);
+    \end{tikzpicture}
+}
+\setbeamertemplate{itemize subitem}{%
+    \begin{tikzpicture}
+        \shade[ball color=black!100!white, preaction={fill=black,
+        opacity=.00,transform canvas={xshift=1mm,yshift=-1mm, yscale=0.5}}] (0,0) circle (0.6ex);
+    \end{tikzpicture}
+}
+\setbeamercolor{frametitle}{bg=white}
+\setbeamercolor{frametitle}{fg=black}
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{block body}{bg=mDarkTeal!30}
+\setbeamercolor{block title}{bg=mDarkTeal,fg=black!2}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}[page number]
+\newenvironment{stepenumerate}{\begin{enumerate}[<+->]}{\end{enumerate}}
+\newenvironment{stepitemize}{\begin{itemize}[<+->]}{\end{itemize} }
+\newenvironment{stepenumeratewithalert}{\begin{enumerate}[<+-| alert@+>]}{\end{enumerate}}
+\newenvironment{stepitemizewithalert}{\begin{itemize}[<+-| alert@+>]}{\end{itemize} }
+
+\graphicspath{{figures/}}
+
+\begin{document}
+
+\title{The Elusive Explanation for the Declining Labor Share}
+\subtitle{}
+\date{Gene Grossman \& Maurice Oberfield \bigskip \\
+\textit{Annual Review of Economics}, 2022}
+\author{}
+\maketitle
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Introduction}
+\begin{itemize}
+\item Smith (1776) noted that the distribution of national income to wages, rents, and profits was closely related to inequality. \medskip
+\item Kaldor (1961) named the constancy of the labor share as the first of his stylized facts about economic growth. \medskip
+\item After more than a century of relative stability, the labor share has declined recently. \medskip
+\item This has lead to revival of interest into the labor share.
+\end{itemize}
+\end{frame}
+
+\AtBeginSection[ ]
+{
+\begin{frame}{Outline}
+    \tableofcontents[currentsection]
+\end{frame}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Measuring the decline in the labor share}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{The labor share in the US}
+\begin{figure}[p!]
+ \includegraphics[width=.9\textwidth]{figure1.pdf} 
+\end{figure}
+\end{frame}
+
+\begin{frame}{Various measures of labor shares}
+\begin{itemize}
+\item Various measures of labor shares depending on: \medskip
+\begin{enumerate}
+\item Gross versus net value added \medskip
+\item Treatment of Intellectual Property (IP) \medskip
+\item Treatment of self-employment and entrepreneurial income \medskip
+\item Treatment of owner-occupied housing \medskip
+\item Treatment of factorless income
+\end{enumerate} \medskip
+\item Nonetheless, there is a consensus that the labor share today is below its level of 1970s and 1980s in the US. \medskip
+\item Same is true for many other countries.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{The global labor share (Karabarbounis \& Neiman 2014)}
+\begin{figure}[p!]
+ \includegraphics[width=.7\textwidth, angle=-90]{figures/figure-KN-1.pdf} 
+\end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Some pitfalls using cross-sectional data}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Defining the labor share}
+\begin{itemize}
+\item Assume a CRS production function $Y = F(K,L; \tau)$. \medskip
+\item Parameter $\tau$ influences relative factor demands. \medskip
+\item The unit cost function is $c(r,w; \tau)$. \medskip
+\item The labor share is given by:
+\begin{equation*}
+    \theta_{L} \equiv \frac{wL}{Y} = \frac{w c_{w}(r,w;\tau)Y}{Y} = w c_{w}(r,w;\tau)    
+\end{equation*}
+\item The capital share is given by $\theta_{K} = r c_{r}(r,w;\tau)$
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Changes in the labor share}
+Differentiating $ \ln(\theta_{L} / \theta_{K}) $ with respect to $\tau$ analyzes demand-driven changes in the labor share:
+\begin{align*}
+    \frac{d \ln(\theta_{L} / \theta_{K})}{d \tau} & = \frac{d \ln(wc_{w} / rc_{r})}{d \tau} \nonumber \\
+    & = \frac{\partial \ln(c_{w} / c_{r})}{\partial \tau} + \left[ \frac{\partial \ln(wc_{w} / rc_{r})}{\partial \ln(r / w )} \right] \frac{d \ln(r / w)}{d \tau} \nonumber \\
+     & = \frac{\partial \ln(c_{w} / c_{r})}{\partial \tau} + \left[ \frac{\partial \ln(w / r)}{\partial \ln(r / w ) } + \frac{\partial \ln(L / K)}{\partial \ln(r / w ) } \right] \frac{d \ln(r / w)}{d \tau} \nonumber \\
+    & = \frac{\partial \ln(L / K) }{\partial \tau} + [ \sigma - 1 ] \frac{d \ln(r / w) }{d \tau} \tag{1}
+\end{align*}
+with $\sigma > 0 $ the elasticity of substitution between $K$ and $L$.
+\end{frame}
+
+\begin{frame}{Changes in the labor share}
+\begin{itemize}
+\item Decomposition of demand-driven changes in the labor share:
+\begin{equation*}
+    \frac{d \ln(\theta_{L} / \theta_{K})}{d \tau} = \frac{\partial \ln(L / K) }{\partial \tau} + [ \sigma - 1 ] \frac{d \ln(r / w) }{d \tau} \tag{1}
+\end{equation*}
+\item The labor share changes because of a \textit{shift in relative factor demands} (i.e. a change in relative factor quantities for given relative factor prices) and a \textit{change in relative factor prices}. \medskip
+\item $ \sigma  \geq 1$ plays a key role. \medskip
+\item Equation (1) is general and must hold for all $ d \tau $.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Example: BGP and Harrod-neutral technological progress}
+\begin{itemize}
+\item In growth models, a BGP is defined by constant growth in $Y/L$ and constant $K/Y$, $r$ and $ \theta_{L}/\theta_{K}$ (Kaldor 1963). \medskip  
+\item In Solow growth models, Kaldor facts require tech progress is Harrod-neutral (purely labor-augmenting) (Uzawa 1961). \medskip
+\item Wage grows at constant rate $ \tau $: $ d \ln(w) = \tau $. \medskip
+\item Also: $ c_{w}(r,w; \tau) = c_{w} (1, \omega; \tau) = e^{-\tau} \tilde{c}_{w} (1, \omega e^{-\tau}) $ and  $ c_{r}(r,w; \tau) = c_{r} (1, \omega; \tau) = \tilde{c}_{r} (1, \omega e^{-\tau}) $. \medskip
+\item Given this, is equation (1) consistent with $ d \ln( \theta_{L} / \theta_{K})=0 $?
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Example: BGP and Harrod-neutral technological progress}
+\begin{itemize}
+\item When deriving equation (1), we used that:
+\begin{align*}
+    \sigma - 1 & = \frac{\partial \ln(rc_{r}(r,w;\tau) / wc_{w}(r,w;\tau))}{\partial \ln(w / r )} \\
+    & = \frac{\partial \ln(c_{r}(r,w;\tau) / \omega c_{w}(r,w;\tau))}{\partial \ln(\omega)} \\
+    & = \frac{\partial \ln(c_{r}(1,\omega;\tau) / \omega c_{w}(1, \omega;\tau))}{\partial \ln(\omega)}
+\end{align*}
+\item Kaldor facts and Harrod-neutral technological progress imply:
+\begin{align*}
+    \sigma - 1 & = \frac{\partial \ln(\tilde{c}_{r}(1,\omega e^{-\tau}) / \omega e^{-\tau} \tilde{c}_{w}(1, \omega e^{-\tau}))}{\partial \ln(\omega)}  \\
+    & = \frac{\partial \ln(\tilde{c}_{w}(1,\omega e^{-\tau}) / \tilde{c}_{r}(1, \omega e^{-\tau}))}{\partial \tau} 
+\end{align*}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Pitfalls when estimating changes in factor shares}
+\begin{itemize}
+\item Let $d \tau_{i}$ be a shock in firm or region $i$ and estimate: \medskip
+\begin{equation*}
+    d \ln(\theta_{L,i} / (1-\theta_{L,i}) = \alpha + \beta d \tau_{i} + \epsilon_{i} \tag{2}
+\end{equation*}
+with $d \tau_{i} $ a shock measure (e.g. tech progress). \medskip
+\item If relative factor prices don't vary across $i$, $\hat{\beta} $ captures the partial equilibrium impact of $ d \tau_{i}$ on shifts in relative factor demands (e.g. $\beta= 0 $ $\Rightarrow $ tech progress is Hicks-neutral).
+\medskip
+\item If relative factor demand-shifts and prices vary across $i$, $\hat{\beta} $ captures the general equilibrium impact of $ d \tau_{i}$ (e.g. $\beta= 0 $ $\Rightarrow $ tech progress is Harrod-neutral).
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Technical change}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Investment-specific technological change}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+	\centering
+	\textbf{Investment-specific technological change}
+\end{frame}
+
+\begin{frame}{Decline in price of investment goods}
+\begin{figure}[p!]
+ \includegraphics[width=.8\textwidth]{figure-KN-7.pdf} 
+\end{figure}
+\end{frame}
+
+\begin{frame}{Investment-specific technological change}
+\begin{itemize}
+\item Assume tech progress decreases the relative price of investment goods $R_{i}$. \medskip
+\item Karabarbounis \& Neiman (2014) use data for 59 countries for 1975-2012 and a general equilibrium equation:
+\begin{equation*}
+    \frac{\theta_{L,i}}{1 - \theta_{L,i}} d \ln(\theta_{L,i}) = \gamma + [\sigma - 1] d \ln(R_{i}) + \epsilon_{i} \tag{KN-19}
+\end{equation*}
+with an estimate $\hat{\sigma} = 1.25$. \medskip
+\item A decrease in $R_{i}$ induces a substitution from labor to capital to such extent that the labor share falls.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Labor share and price of investment goods}
+\begin{figure}[p!]
+ \includegraphics[width=.7\textwidth]{figure-KN-8.pdf} 
+\end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Robot adoption}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+	\centering
+	\textbf{Robot adoption}
+\end{frame}
+
+\begin{frame}{Automation and creation of labor tasks}
+\begin{itemize}
+\item Automation (\textit{creation}) of labor tasks assumes that capital (\textit{labor}) directly substitutes for some labor (\textit{capital}) tasks. \medskip
+\item Acemoglu \& Restrepo (2019) use data for US sectors for 1947-1987 and estimate:
+\begin{equation*}
+    \frac{1}{1 - \theta_{L,i}} d \ln(\theta_{L,i}) = \frac{d \ln(\Gamma_{i})}{1- \Gamma_{i}} + [\sigma -1] d \ln(\frac{r_{i}}{w_{i}}) \tag{AR-A10}
+\end{equation*}
+with $ d \ln(\Gamma_{i}) / (1- \Gamma_{i})$ shifts in relative labor demand due to automation (-) or creation (+) of labor tasks. \medskip
+\item Assuming $\sigma = 0.8$, they impute $ d \ln(\Gamma_{i}) / (1- \Gamma_{i}) $ and find that automation has decreased $ \theta_{L} $ after 1987.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Shifts in relative labor demand (Figure 5)}
+\begin{figure}[p!]
+ \includegraphics[width=\textwidth]{figure-AR-5B.pdf} 
+\end{figure}
+\end{frame}
+
+\begin{frame}{Shifts in relative labor demand and robot adoption (Figure 4A)}
+\begin{figure}[p!]
+ \includegraphics[width=\textwidth]{figure-AR-A4.pdf} 
+\end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{The rise of superstar firms}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+	\centering
+	\textbf{The rise of superstar firms}
+\end{frame}
+
+\begin{frame}{The rise of superstar firms (Autor et al. 2020)}
+\begin{itemize}
+\item The sales-weighted labor share decreases if superstar firms become more important and have lower labor shares. \medskip
+\item Autor et al. (2020) decompose the sales-weighted labor share:
+\begin{equation*}
+    S = \sum \omega_{i} S_{i} = \bar{S} + \sum (\omega_{i} - \bar{\omega})(S_{i}-\bar{S}) \tag{ADKPR-3}
+\end{equation*}
+with $ \omega_{i} \equiv P{i}Y_{i}/PY$, $\bar{S}$ the unweighted mean labor share, and $\bar{\omega}$ the unweighted mean value-added share. \medskip
+\item Change in the labor share can be written as:
+\begin{equation*}
+    \Delta S = \Delta \bar{S} + \Delta \left[ \sum (\omega_{i} - \bar{\omega})(S_{i}-\bar{S}) \right] \tag{ADKPR-4}
+\end{equation*}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{The rise of superstar firms decreases the labor share}
+\begin{figure}[p!]
+ \includegraphics[width=0.7\textwidth]{figure-ADKPR-7.pdf} 
+\end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Globalization and the rise of China}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Globalization and the rise of China}
+\begin{itemize}
+\item When do imported inputs decrease the domestic labor share? \medskip 
+\item Elsby, Hobijn \& Sahin (2013) use data for US sectors for 1993-2010 and the equation:
+\begin{align*}
+    \frac{1}{1-\theta_{L,i}} \frac{d \ln(\theta_{L,i})}{d \ln(M_{i})} & = - s_{M,i} \left( \rho_{LM} - \rho_{KM} \right) \tag{EHS-11} \\
+    & = - s_{M,i} \left( \frac{\sigma_{LM}-1}{\sigma_{LM}} - \frac{\sigma_{KM}-1}{\sigma_{KM}} \right)  
+\end{align*}
+with $s_{M,j} \equiv M_{i} / (P_{i}Y_{i})$. \medskip
+\item If $ \sigma_{LM} > \sigma_{KM} $, imported inputs will induce greater substitution away from labor than from capital and $ \theta_{L,i}$ decreases.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{The labor share and import competition across industries}
+\begin{figure}[p!]
+ \includegraphics[width=.8\textwidth]{figure-EHS-12.pdf} 
+\end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Increased product market power}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{The rise of markups (De Loecker, Eeckhout \& Unger 2020)}
+\begin{figure}[p!]
+ \includegraphics[width=\textwidth]{figure-LEU-1.pdf} 
+\end{figure}
+\end{frame}
+
+\begin{frame}{Monopoly and price markups}
+\begin{itemize}
+\item Why do higher markups lower the labor share? \medskip
+\item Assuming $ Y= F(K,L)$ and inverse product demand given by $p=P(Y)$, profit maximization implies:
+\begin{equation*}
+    \rho F_{L} = w
+\end{equation*}
+with $ \rho \equiv p+YP_{Y}$ marginal revenue.
+\item Rearranging terms and multiplying through by $L/Y$:
+\begin{equation*}
+    \epsilon_{YL} \equiv \frac{LF_{L}}{Y} = \frac{wL}{\rho Y} = \frac{p}{\rho} \frac{wL}{pY} = \frac{p}{\rho} \theta_{L}
+\end{equation*}
+with $  \epsilon_{YL}$ the elasticity of $Y$ with respect to $L$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Markups decrease factor shares}
+\begin{itemize}
+\item Equating marginal revenue to marginal cost, $\rho = MC$:
+\begin{equation*}
+    \epsilon_{YL} = \frac{p}{\rho} \theta_{L}  = \frac{p}{MC} \theta_{L} = \mu \theta_{L} \tag{4}
+\end{equation*}
+with $  \mu $ the markup of output price over marginal cost. \medskip
+\item The analogous expression for capital is:
+\begin{equation*}
+    \epsilon_{YK} = \frac{p}{\rho} \theta_{K} = \frac{p}{MC} \theta_{K} = \mu \theta_{K}
+\end{equation*}
+\item For given $\epsilon_{YL} $ and $\epsilon_{YK} $, an increase in $\mu$ decreases $\theta_{L} $ and $\theta_{K} $.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Markups increase the profit share}
+\begin{itemize}
+\item Summing $ \theta_{L} = \epsilon_{YL} / \mu $ and $ \theta_{K} = \epsilon_{YK} / \mu  $ gives:
+\begin{equation*}
+    \theta_{L} + \theta_{K}  = \frac{\epsilon_{YL} + \epsilon_{YK}}{\mu} = 1 - \theta_{\pi} \tag{5}
+\end{equation*}
+with $\theta_{\pi} $ the profit share and $\epsilon_{YL} + \epsilon_{YK} $ return to scale. \medskip
+\item For given $ \epsilon_{YL} + \epsilon_{YK}$, an increase in $  \mu $ increases $ \theta_{\pi}$. \medskip
+\item Alternatively, we can write for $j=L,K$:
+\begin{equation*}
+    \theta_{j} = \frac{\epsilon_{Yj}}{\epsilon_{YL} + \epsilon_{YK}}[1- \theta_{\pi}]  \tag{6}
+\end{equation*}
+showing that an increase in $\theta_{\pi} $ decreases $\theta_{L} $ and $\theta_{K} $.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Estimating and interpreting rising markups}
+\begin{itemize}
+\item De Loecker, Eeckhout \& Unger (2020) estimate firm-level markups using a composite of variable inputs:
+\begin{equation*}
+    \hat{\mu}_{it} = \frac{\hat{\epsilon}_{YV,t}}{\hat{\theta}_{V,it}} 
+\end{equation*}
+with $ \epsilon_{YV,t}$ estimated using Olley-Pakes technique. \medskip
+\item The sales-weighted average markup in year $t$ is given by:
+\begin{equation*}
+    \mathbb{E}_{t}{[\hat{\mu}_{i,t}]} = \sum_{i} \frac{p_{it}y_{it}}{P_{t}Y_{t}} \frac{\hat{\epsilon}_{YV,t}}{\hat{\theta}_{V,it}} 
+\end{equation*}
+\item Measures have been critized and rising markups is a proximate (not primitive) cause of fall in $ \theta_{j}$.
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Declining market power of workers}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{The decline in union membership}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+	\centering
+	\textbf{The decline in union membership}
+\end{frame}
+
+\begin{frame}{Declining union membership}
+\begin{itemize}
+\item When does de-unionisation decrease the labor share? \medskip
+\item Bentolila \& Saint-Paul (2003) use CES production to get:
+\begin{equation*}
+    \theta_{L,i} = 1 - \alpha k_{i}^{\frac{\sigma - 1}{\sigma}} \tag{BS-10}
+\end{equation*}
+with $ k_{i} \equiv K_{i} / Y_{i} $ and $ \alpha$ capital's distribution parameter. \medskip
+\item A decrease in the union-wage premium makes firms substitute labor for capital which decreases $k_{i}$. \medskip
+\item If $\sigma < 1 $, de-unionisation decreases $\theta_{L,i}$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Labor share and labor rents (Stansbury \& Summers 2020)}
+\begin{figure}[p!]
+ \includegraphics[width=.9\textwidth]{figure-SS-9.pdf} 
+\end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Increased concentration of labor demand}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+	\centering
+	\textbf{Increased concentration of labor demand}
+\end{frame}
+
+\begin{frame}{Monopsony and wage markdowns}
+\begin{itemize}
+\item Why do higher wage markdowns lower the labor share? \medskip
+\item Assuming $ Y= F(K,L)$ and inverse labor supply $w=W(L)$, profit maximization implies:
+\begin{equation*}
+    p F_{L} = \tilde{\mu} w
+\end{equation*}
+with $ \tilde{\mu} \equiv 1+ \epsilon_{Lw}^{-1} $ and $ \epsilon_{Lw}^{-1}$ the elasticity of $W(L)$.
+\item Rearranging terms and multiplying through by $L/Y$:
+\begin{equation*}
+    \epsilon_{YL} \equiv \frac{LF_{L}}{Y} = \tilde{\mu} \frac{wL}{p Y}  = \tilde{\mu} \theta_{L}
+\end{equation*}
+such that an increase in $\tilde{\mu}$ decreases $\theta_{L}$ for given $\epsilon_{YL}$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{ Wages and employer concentration (Azar et al. 2020)}
+\begin{figure}[p!]
+ \includegraphics[width=.9\textwidth]{figure-AMS-5.pdf} 
+\end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conclusions}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Conclusions}
+\begin{itemize}
+\item After remaining constant for a long time, the labor share has been declining in the last decades. \medskip
+\item Several reasons have been documented in the literature: \medskip
+\begin{itemize}
+    \item Technological progress and the rise of superstar firms. \medskip
+    \item Increased imported inputs. \medskip
+    \item De-unionisation. \medskip
+    \item Increased price markups and wage markdowns. \medskip
+\end{itemize}
+\item There is overcounting because explanations are not exclusive and not all primitive drivers of change. 
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Further readings}
+\footnotesize
+\begin{enumerate}
+\item Karabarbounis, L., and B. Neiman (2014b). “The Global Decline of the Labor Share”. \textit{Quarterly Journal of Economics}. 129(1): 61–103.
+\item Elsby, M., B. Hobijn, and A. Sahin (2013). “The Decline of the U.S. Labor Share”. \textit{Brookings Papers on Economic Activity}. 44: 1–52.
+\item Acemoglu, D., and P. Restrepo (2019). “Automation and New Tasks: How Technology Displaces and Reinstates Labor”. \textit{Journal of Economic Perspectives}. 33:2: 3-30.
+\item Stansbury, A., and L. Summers (2020). “The Declining Worker Hypothesis: An Explanation for the Recent Evolution of the American Economy”. \textit{Brookings Papers on Economic Activity}. Spring 2020
+\item Autor, D., Dorn, D., Katz, L., Patterson, C., and J. Van Reenen (2020). “The Fall of the Labor Share and the Rise of Superstar Firms”. \textit{ Quarterly Journal of Economics}. 135(2): 645-709.
+\item L. Karabarbounis (2023). “Perspectives on the Labor Share”. \textit{NBER Working Paper} 31854. November 2023.
+\end{enumerate}
+\end{frame}
+
+\end{document}
