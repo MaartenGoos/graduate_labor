@@ -1,0 +1,700 @@
+\documentclass[notes=show]{beamer}
+\usepackage{mathpazo}
+\usepackage{hyperref}
+\usepackage{multimedia}
+\usepackage{tcolorbox}
+\usepackage{tikz}
+\usetikzlibrary{shadows}
+\usetheme{metropolis}
+\usecolortheme{default}
+\setbeamertemplate{itemize item}{%
+    \begin{tikzpicture}
+        \shade[ball color=black!100!yellow, preaction={fill=black,
+opacity=.00,transform canvas={xshift=1mm,yshift=-1mm, yscale=0.5}}] (0,0) circle (0.6ex);
+    \end{tikzpicture}
+}
+\setbeamertemplate{itemize subitem}{%
+    \begin{tikzpicture}
+        \shade[ball color=black!100!white, preaction={fill=black,
+        opacity=.00,transform canvas={xshift=1mm,yshift=-1mm, yscale=0.5}}] (0,0) circle (0.6ex);
+    \end{tikzpicture}
+}
+\setbeamercolor{frametitle}{bg=white}
+\setbeamercolor{frametitle}{fg=black}
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{block body}{bg=mDarkTeal!30}
+\setbeamercolor{block title}{bg=mDarkTeal,fg=black!2}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}[page number]
+\newenvironment{stepenumerate}{\begin{enumerate}[<+->]}{\end{enumerate}}
+\newenvironment{stepitemize}{\begin{itemize}[<+->]}{\end{itemize} }
+\newenvironment{stepenumeratewithalert}{\begin{enumerate}[<+-| alert@+>]}{\end{enumerate}}
+\newenvironment{stepitemizewithalert}{\begin{itemize}[<+-| alert@+>]}{\end{itemize} }
+
+\graphicspath{{figures/}}
+
+\begin{document}
+
+\title{Firms and Labor Market Inequality: Evidence and Some Theory}
+\subtitle{}
+\date{Card, Cardoso, Heining, Kline \bigskip \\
+\textit{Journal of Labor Economics}, 2018, 36:S1, S13-S70}
+\author{}
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Inequality in imperfectly competitive labor markets}
+\begin{itemize}
+\item Employers set wages (Robinson 33, Slichter 50, Krueger\&Summers 88) \medskip
+\item Difficult to distinguish firm-wage premia from sorting (Gibbons\&Katz 92) \medskip
+\item Impact of shocks to firm productivity on wages of stayers finding rent-sharing elasticities of 0.05-0.15 \medskip
+\item AKM using switchers to identify additive worker and firm FE finding that 20\% of variances in wages is due to firm FE
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Linking rent-sharing elasticities to firm FE and worker sorting}
+\begin{itemize}
+\item Review of literature on rent-sharing and studies using AKM \medskip
+\item Use data for Portugal to show that more productive firms have higher firm FE \medskip
+\item Model in which heterogeneous firms set wages when workers value firms differently \medskip 
+\item Model has become known as ``new classical monopsony'' \medskip
+\item Show that this model explains rent-sharing elasticities, firm FE and sorting of workers across firms.
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Productivity, Wages, and Rent Sharing}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+\begin{center}
+\begin{figure}
+\includegraphics[height=8.5cm,width=\textwidth]{figures/fig1.pdf}
+\end{figure} 
+\end{center}
+\newpage
+
+\begin{frame}{Impartial pass-through of productivity to wages}
+\begin{itemize}
+\item Literature on rent sharing examines whether productivity differences feed into wage differences \medskip
+\item Rent-sharing elasticities of 0.05-0.15 show impartial pass-through suggesting firms have wage setting power \medskip
+\item Analog of literature in international economics and IO finding impartial pass-through of cost shocks to prices suggesting firms have price setting power \medskip
+\item Rent-sharing elasticities are sensitive to measurement issues
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Measuring Rents}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Measuring rents}
+\begin{itemize}
+\item Assume that the wage at firm $j$ is given by:
+\begin{equation*}
+    w_{j} = b + \gamma \frac{Q_{j}}{N_{j}} \tag{1}
+\end{equation*}
+with $Q_{j}/N_{j}$ quasi-rents per worker. 
+\medskip
+\item Quasi-rents are given by:
+\begin{equation*}
+    Q_{j} = VA_{j} - bN_{j} - rK_{j}
+\end{equation*}
+with $VA_{j}$ value added (revenue net of material costs). \medskip
+\item Value added is given by:
+\begin{equation*}
+    VA_{j} = P_{j} T_{j} f(N_{j},K_{j})
+\end{equation*}
+with $T_{j}$ firm-specific $TFP_{j}$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Rent-sharing elasticities with quasi-rents and profit per worker}
+\begin{itemize}
+\item The elasticity of wages w.r.t. quasi-rents per worker is:
+\begin{equation*}
+    \xi_{Q{j}} \equiv \frac{d w_{j}}{d (Q_{j}/N_{j})} \frac{Q_{j}/N_{j}}{w_{j}} = \frac{\gamma [Q_{j}/N_{j}]}{b + \gamma [Q_{j}/N_{j}]} \tag{2}
+\end{equation*}
+which corresponds to the share of quasi-rents in wages. \medskip
+\item $\xi_{Q{j}} $ is also elasticity of wages w.r.t. profit per worker because:
+\begin{align*}
+    \frac{\Pi_{j}}{N_{j}} & = \frac{1}{N_{j}} \left[ VA_{j} - w_{j}N_{j} - rK_{j} \right] \nonumber \\
+    & = \frac{1}{N_{j}} \left[ VA_{j} - bN_{j} - rK_{j} - (w_{j} - b)N_{j} \right] \nonumber \\
+    & = \frac{1}{N_{j}} \left[ Q_{j} - \gamma \frac{Q_{j}}{N_{j}}N_{j} \right] \nonumber \\
+    & = \frac{Q_{j}}{N_{j}} \left[ 1 - \gamma \right] \nonumber
+\end{align*}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Rent-sharing elasticities with value added per worker}
+\begin{itemize}
+\item The elasticity of wages w.r.t. value added per worker is:
+\begin{align*}
+    \xi_{j} & \equiv \frac{d w_{j}}{d (VA_{j}/N_{j})} \frac{VA_{j}/N_{j}}{w_{j}} \nonumber \\
+    & = \frac{d w_{j}}{d (Q_{j}/N_{j})} \frac{VA_{j}/N_{j}}{w_{j}} \nonumber \\
+    & = \frac{d w_{j}}{d (Q_{j}/N_{j})} \frac{Q_{j}/N_{j}}{w_{j}} \frac{VA_{j}}{Q_{j}} \nonumber \\
+    & = \xi_{Q{j}} \frac{VA_{j}}{Q_{j}} \nonumber
+\end{align*}
+\item $\xi_{j} >  \xi_{Q{j}} $ because $ VA_{j} > Q_{j}$ (e.g. $ VA_{j} / Q_{j} = 2$) \medskip 
+\item A majority of studies estimates $\xi_{j} $
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{A Summary of the Rent-Sharing Literature}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+\begin{frame}{Summary of the rent-sharing literature}
+\begin{center}
+\begin{figure}
+\includegraphics[scale=0.98]{Cardetal/figures/tab1-1.pdf}
+\end{figure} 
+\end{center}
+\end{frame}
+
+\newpage
+\begin{frame}{Summary of the rent-sharing literature}
+\begin{center}
+\begin{figure}
+\includegraphics[scale=0.98]{Cardetal/figures/tab1-2.pdf}
+\end{figure} 
+\end{center}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Specification Issues: A Replication in Portuguese Data}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Replication using Portuguese data}
+\begin{itemize}
+\item Wage data from Quadros de Pessoal (QP), a census of private sector employees between 2005-2009. \medskip 
+\item Firm-specific financial information from SABI database by Bureau van Dijk with information on value added and sales per worker between 2004-2010. \medskip
+\item Merge QP and SABI using information on detailed location, industry, firm creation date, shareholder equity, and annual sales that are available in both data sets. \medskip
+\item Regress wages onto value added or sales per worker controlling for human capital variables, industry and location.
+\end{itemize}
+\end{frame}
+
+\newpage
+\begin{frame}{Rent-sharing elasticities for Portuguese male workers}
+\begin{center}
+\begin{figure}
+\includegraphics[scale=0.95]{Cardetal/figures/tab2-1.pdf}
+\end{figure} 
+\end{center}
+\end{frame}
+
+\newpage
+\begin{frame}{Rent-sharing elasticities for Portuguese male workers}
+\begin{center}
+\begin{figure}
+\includegraphics[scale=0.95]{Cardetal/figures/tab2-2.pdf}
+\end{figure} 
+\end{center}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Firm Switching}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{AKM model}
+%Data set contains N* person-year observations on N workers and J establishments \\
+\begin{itemize} 
+    \item Log daily real wage $y_{it}$ of individual $i$ in year $t$ is given by:
+    \begin{equation*}
+	\ln(w_{it}) = \alpha_i + \psi_{J(i,t)} + x'_{it}\beta + \epsilon_{it}
+    \end{equation*}
+\item Estimates of firm effects typically explain 15\%–25\% of the variance of wages \medskip
+\item Sorting of workers and firms with high FE also explains part of the variance in wages \medskip
+\item Problem is that the person and firm effects are overstated and sorting is understated in small samples and limited mobility
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Variance decompositions}
+\begin{itemize}
+\item Variance of wages can be decomposed as:
+    \begin{align*}
+	    Var(\ln(w_{it}))& = Var(\alpha_i)+Var(\psi_{J(i,t)})+Var(x_{it}'\beta) \tag{3} \\
+				&+ 2Cov(\alpha_i,\psi_{J(i,t)})+2Cov(\psi_{J(i,t)},x_{it}'\beta)  \\
+				&+ 2Cov(\alpha_i,x_{it}'\beta) + Var(\epsilon_{it})
+	\end{align*}
+\item An alternative decomposition is:
+    \begin{align*}
+		Var(\ln(w_{it}))& = Cov(\ln(w_{it},\alpha_i) + Cov(\ln(w_{it},\psi_{J(i,t)}) \tag{4} \\
+				& + Cov(\ln(w_{it},x_{it}'\beta) + Cov(\ln(w_{it}, \epsilon_{it})
+    \end{align*}
+which is an ensemble assessment of each component, e.g.:
+\begin{align*}
+    Cov(\ln(w_{it}),\psi_{J(i,t)}) = & Var(\psi_{J(i,t)}) + Cov(\alpha_{i},\psi_{J(i,t)}) \\
+    & + Cov(x_{it}'\beta,\psi_{J(i,t)})
+\end{align*}
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Identifying Age and Time Effects}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Identifying age and time effects}
+\begin{itemize}
+\item A technical issue that arises in AKM models is the linear inclusion of age $a_{it}$ in $X_{it}$. \medskip
+\item It is standard to include year effects $t$ in $X_{it}$. \medskip
+\item This raises an identification problem because $a_{it} = t - b_{i}$ with $b_{i}$ birth year which loads onto $\alpha_{i}$ \medskip
+\item Use actual experience instead of age if available and if gaps are exogenous conditional on $\alpha_{i}$. \medskip
+\item Impose restrictions on age or time effects. 
+\end{itemize}
+\end{frame}
+
+\newpage
+\begin{frame}{AKM estimates with different restrictions on age effects}
+\begin{center}
+\begin{figure}
+\includegraphics[scale=1]{Cardetal/figures/tab3-1.pdf}
+\end{figure} 
+\end{center}
+\end{frame}
+
+\newpage
+\begin{frame}{AKM estimates with different restrictions on age effects}
+\begin{center}
+\begin{figure}
+\includegraphics[scale=1]{Cardetal/figures/tab3-2.pdf}
+\end{figure} 
+\end{center}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Worker-Firm Sorting and Limited Mobility Bias}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Exogenous Mobility}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Limited mobility bias and exogenous mobility}
+\begin{itemize}
+\item Under the AKM assumptions, FE estimates are unbiased:
+    \begin{equation*}
+	 \forall j: \mathbb{E} \left[ \hat{\psi_{j}} \right] = \psi_{j} \text{   and   }  \forall i: \mathbb{E} \left[ \hat{\alpha_{i}} \right] = \alpha_{i}
+    \end{equation*}
+\item But noise leads to upward bias in variance of FE estimated effects and limited mobility to downward bias in covariance \medskip
+\item Exogenous mobility:
+    \begin{equation*}
+	P(J(i,t)=j | \alpha_{i}, \psi, \epsilon_{i,1},...,\epsilon_{i,T})=P(J(i,t)=j | \alpha_{i}, \psi)
+    \end{equation*}
+which is an identifying assumption.
+\end{itemize}
+\end{frame}
+
+\newpage
+\begin{frame}{Wage changes for job switchers: men}
+\begin{center}
+\begin{figure}
+\includegraphics[scale=0.85]{Cardetal/figures/fig3.pdf}
+\end{figure} 
+\end{center}
+\end{frame}
+
+\newpage
+\begin{frame}{Wage changes for job switchers: women}
+\begin{center}
+\begin{figure}
+\includegraphics[scale=0.85]{Cardetal/figures/fig4.pdf}
+\end{figure} 
+\end{center}
+\end{frame}
+
+\newpage
+\begin{frame}{Testing symmetry between switches: men}
+\begin{center}
+\begin{figure}
+\includegraphics[scale=0.95]{Cardetal/figures/fig5-A.pdf}
+\end{figure} 
+\end{center}
+\end{frame}
+
+\newpage
+\begin{frame}{Testing symmetry between switches: women}
+\begin{center}
+\begin{figure}
+\includegraphics[scale=0.95]{Cardetal/figures/fig5-B.pdf}
+\end{figure} 
+\end{center}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Additive Separability}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+\begin{frame}{Testing additive separability: men}
+\begin{center}
+\begin{figure}
+\includegraphics[scale=0.7]{Cardetal/figures/fig6.pdf}
+\end{figure} 
+\end{center}
+\end{frame}
+
+\newpage
+\begin{frame}{Testing additive separability: women}
+\begin{center}
+\begin{figure}
+\includegraphics[scale=0.75]{Cardetal/figures/fig7.pdf}
+\end{figure} 
+\end{center}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Reconciling Rent-Sharing Estimates with Results from Studies of Firm Switching}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Reconciling rent-sharing and AKM estimates}
+\begin{itemize}
+\item Obtain a rent-sharing elasticity $ \gamma_{w} $ from:
+\begin{equation*}
+    \ln(w_{it}) = \beta_{w} + \gamma_{w} \ln(VA/N)_{j} + \epsilon_{w,it}
+\end{equation*}
+\item Obtain $\gamma_{\alpha_{i}}$, $\gamma_{\psi_{j}}$ and $\gamma_{X_{it}' \beta}$ by regressing:
+\begin{equation*}
+    y = \beta_{y} + \gamma_{y} \ln(VA/N)_{j}  + \epsilon_{y,it}
+\end{equation*}
+with $y = \alpha_{i}, \psi_{j}$ and $\ln(X_{it}' \beta)$ respectively. \medskip
+\item We then have:
+\begin{equation*}
+    \gamma_{w} = \gamma_{\alpha_{i}} + \gamma_{\psi_{j}} + \gamma_{X_{it}' \beta}  
+\end{equation*}
+with $ \gamma_{\psi_{j}}$ a clean measure of the true rent-sharing elasticity and $\gamma_{\alpha_{i}} $ and $\gamma_{X_{it}' \beta} $ capturing sorting effects.
+\end{itemize}
+\end{frame}
+
+\newpage
+\begin{frame}{Reconciling rent-sharing and AKM estimates}
+\begin{center}
+\begin{figure}
+\includegraphics[scale=0.95]{Cardetal/figures/tab4-1.pdf}
+\end{figure} 
+\end{center}
+\end{frame}
+
+\newpage
+\begin{frame}{Reconciling rent-sharing and AKM estimates}
+\begin{center}
+\begin{figure}
+\includegraphics[scale=0.95]{Cardetal/figures/tab4-2.pdf}
+\end{figure} 
+\end{center}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Differential Rent Sharing}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+\begin{frame}{No differential rent-sharing}
+\begin{center}
+\begin{figure}
+\includegraphics[scale=0.85]{Cardetal/figures/fig8.pdf}
+\end{figure} 
+\end{center}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Imperfectly Competitive Labor Markets and Inequality}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Market Structure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Worker utility}
+\begin{itemize}
+\item For worker $i$ in skill group $S \in \{ L,H \}$ utility of working at firm $j$ is given by:
+\begin{equation*}
+    u_{iSj} = \beta_{S} \ln(w_{j} - b_{s}) + a_{Sj} + \epsilon_{iSj}
+\end{equation*}
+with $b_{s}$ reference wage, $ a_{Sj}$ firm-specific amenities valued by all workers, $\epsilon_{iSj} $ idiosyncratic preference for working at firm $j$. \medskip
+\item $ \{\epsilon_{iSj} \} $ are independent draws from a type I Extreme Value distribution (to model worker's choice for $j$ as in BLP). \medskip
+\item Firms post wages knowing the distribution of $ \{\epsilon_{iSj} \} $ but not individual specific values and workers choose a $j$. 
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Worker sorting across firms}
+\begin{itemize}
+\item Given posted wages, workers have logit choice probabilities:
+\begin{equation*}
+    p_{Sj} = \frac{\exp(\beta_{S}(\ln(w_{Sj} - b_{S}) + a_{Sj}))}{\sum_{k=1}^{J} \exp(\beta_{S}(\ln(w_{Sk} - b_{S}) + a_{Sk}))}
+\end{equation*}
+\item Assume that $J$ is very large such that:
+\begin{equation*}
+    p_{Sj} \approx \lambda_{S} \exp(\beta_{S}(\ln(w_{Sj} - b_{S}) + a_{Sj}))
+\end{equation*}
+\item This gives firm-level supply functions:
+\begin{align*}
+    \ln(L_{j}(w_{Lj})) & = \ln(\mathcal{L} \lambda_{L}) + \beta_{L} \ln(w_{Lj} - b_{L}) + a_{Lj} \tag{5} \\
+    \ln(H_{j}(w_{Lj})) & = \ln(\mathcal{H} \lambda_{H}) + \beta_{H} \ln(w_{Hj} - b_{H}) + a_{Hj} \tag{6} \\
+\end{align*}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Elasticities of firm-level labor supply}
+\begin{itemize}
+\item The elasticities of firm-level labor supply are given by:
+\begin{align*}
+    e_{Lj} & \equiv \frac{\partial \ln(L_{j}(w_{Lj}))}{\partial \ln(w_{Lj})} = \beta_{L} \frac{w_{Lj}}{w_{Lj} - b_{L}} \\
+    e_{Hj} & \equiv \frac{\partial \ln(H_{j}(w_{Hj}))}{\partial \ln(w_{Hj})} = \beta_{H} \frac{w_{Hj}}{w_{Hj} - b_{H}}
+\end{align*}
+\item Finite $ \beta_{S} $ implies workers' idiosyncratic preferences for amenities matter giving firms monopsony power. \medskip
+\item As $ \beta_{L}, \beta_{H} \rightarrow \infty $ firm-level labor supply becomes perfectly elastic and we approach competitive labor market.
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Firm Optimization}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Firm optimization}
+\begin{itemize}
+\item Firm have production functions:
+\begin{equation*}
+    Y_{j} = T_{j} f(L_{j},H_{j})
+\end{equation*}
+\item The firm's optimal wage choices solve for the first-order conditions:
+\begin{align*}
+    w_{Lj} \frac{1+e_{Lj}}{e_{Lj}} & = T_{j} f_{L} \mu_{j} \tag{8} \\
+    w_{Hj} \frac{1+e_{Hj}}{e_{Hj}} & = T_{j} f_{H} \mu_{j} \tag{9}
+\end{align*}
+with $ e_{Sj} $ the elasticity of labor supply, $ f_{S} $ marginal labor productivity, and $\mu_{j} $ the firm's marginal cost.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Wage markdowns from marginal product}
+\begin{itemize}
+\item Using expressions for firm-level labor supply elasticities gives:
+\begin{align*}
+    w_{Lj} & = \frac{1}{1 + \beta_{L}}b_{L} + \frac{\beta_{L}}{1 + \beta_{L}} T_{j} f_{L} \mu_{j} \tag{10} \\
+    w_{Hj} & = \frac{1}{1 + \beta_{H}}b_{H} + \frac{\beta_{H}}{1 + \beta_{H}} T_{j} f_{H} \mu_{j} \tag{11}
+\end{align*}
+\item Wage is a weighted average of $b_{S}$ and marginal product. \medskip
+\item If $ b_{S} < T_{j} f_{S} \mu_{j} $, wage is marked down from marginal product. \medskip
+\item As $ \beta_{S} \rightarrow \infty $ wage converges to marginal product and labor market is perfectly competitive.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Example for a single skill group}
+\begin{itemize}
+\item Firm-level labor supply is given by:
+\begin{equation*}
+    w_{j}(S_{j}) = S_{j}^{\frac{1}{\beta}}
+\end{equation*}
+\item Output is given by:
+\begin{equation*}
+    Y_{j}(S_{j}) = T_{j} S_{j}^{\frac{\epsilon - 1}{\epsilon}}
+\end{equation*}
+\item Product market is perfectly competitive with $P_{j}=1$. \medskip
+\item Firms maximize profits:
+\begin{equation*}
+    \max_{S_{j}} \Pi = P_{j} Y_{j}(S_{j}) - w_{j}(S_{j}) S_{j} = T_{j}S_{j}^{\frac{\epsilon - 1}{\epsilon}} - S_{j}^{\frac{1 + \beta}{\beta}} 
+\end{equation*}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Example for a single skill group}
+\begin{itemize}
+\item First-order condition is given by:
+\begin{equation*}
+    \underbrace{T_{j}\frac{\epsilon - 1}{\epsilon} S_{j}^{-\frac{1}{\epsilon}}}_{MRP} = \underbrace{\frac{1 + \beta}{\beta} S_{j}^{\frac{1}{\beta}}}_{MFC} > S_{j}^{\frac{1}{\beta}} = w_{j}(S_{j})
+\end{equation*}
+\item Wage is marked down from MRP:
+\begin{equation*}
+    w_{j} = \frac{\beta}{1+\beta} MRP
+\end{equation*}
+\item Equilibrium employment is given by:
+\begin{equation*}
+    S_{j} = \left[ T_{j} \frac{\epsilon - 1}{\epsilon} \frac{\beta}{1+\beta} \right]^{\frac{\beta \epsilon}{\beta + \epsilon}}
+\end{equation*}
+\item Equilibrium wage is given by:
+\begin{equation*}
+    w_{j} = \left[ T_{j} \frac{\epsilon-1}{\epsilon} \frac{\beta}{1+\beta} \right]^{\frac{\epsilon}{\epsilon+\beta}}
+\end{equation*}
+\end{itemize}
+\end{frame}
+
+\newpage
+\begin{frame}{Equilibrium and wage pass-through of productivity shocks}
+\begin{center}
+\begin{figure}
+\includegraphics[scale=0.85]{Cardetal/figures/fig9.png}
+\end{figure} 
+\end{center}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Baseline Case: Linear Production Function and Fixed Output Price}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Baseline case: linear production function and fixed output price}
+\begin{itemize}
+\item Return to setup with 2 skill types $S=L,H$. \medskip
+\item Linear production function with distribution parameter $ \theta $: \medskip
+\begin{equation*}
+    Y_{j} = T_{j} N_{j} = T_{j} ( (1 - \theta) L_{j} + \theta H_{j})
+\end{equation*}
+\item Fixed output price $ P_{j}^{0}$. \medskip
+\item The wage equations are given by:
+\begin{align*}
+    w_{Lj} & = \frac{1}{1 + \beta_{L}}b_{L} + \frac{\beta_{L}}{1 + \beta_{L}} T_{j} P{j}^{0} (1 - \theta) \\
+    w_{Hj} & = \frac{1}{1 + \beta_{H}}b_{H} + \frac{\beta_{H}}{1 + \beta_{H}} T_{j} P{j}^{0} \theta
+\end{align*}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Re-writing the wage equations to capture rent sharing}
+\begin{itemize}
+\item An alternative way to write the wage equations is:
+\begin{align*}
+    w_{Lj} & = \frac{b_{L}}{1 + \beta_{L}} \left[ 1 + \frac{\beta_{L}}{b_{L}} T_{j} P{j}^{0} (1 - \theta) \right] \\
+    w_{Hj} & = \frac{b_{H}}{1 + \beta_{H}} \left[ 1 + \frac{\beta_{H}}{b_{H}} T_{j} P{j}^{0} \theta \right]
+\end{align*}
+\item Assume that $b_{L}=(1-\theta)b$ and $b_{H}=\theta b$ \medskip
+\item Taking logs gives:
+\begin{align*}
+    \ln(w_{Lj}) & = \ln \left( \frac{(1-\theta)b}{1 + \beta_{L}} \right) + \ln (1+\beta_{L}R_{j}) \tag{12} \\
+    \ln(w_{Hj}) & = \ln \left( \frac{\theta b}{1 + \beta_{H}} \right) + \ln (1+\beta_{H}R_{j}) \tag{13}
+\end{align*}
+with $ R_{j} \equiv P_{j}^{0}T_{j}/b$ the gap between MRP and $b$.  
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Rent-sharing elasticities}
+\begin{itemize}
+\item Value added per standardized unit of labor is:
+\begin{equation*}
+    \nu_{j} = P_{j}^{0}Y_{j}/N_{j}=P_{j}^{0}T_{j}=R_{j}b
+\end{equation*}
+\item Rent-sharing elasticities are then given by:
+\begin{equation*}
+    \xi_{Sj} \equiv \frac{\partial \ln(w_{Sj})}{\partial \ln(\nu_{j})} = \frac{\beta_{S}R_{j}}{1+\beta_{S}R_{j}}
+\end{equation*}
+which is the same as equation (2). \medskip
+\item This elasticity is around 0.1 such that $\beta_{S}R_{j}$ is around 0.1.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Elasticities of firm-level labor supply and relative wages}
+\begin{itemize}
+\item The firm-level labor supply elasticity for group $S$ is given by:
+\begin{equation*}
+    e_{Sj} = \frac{\beta_{S}w_{Sj}}{w_{Sj}-b_{S}} = \frac{1+\beta_{S}R_{j}}{R_{j}-1}
+\end{equation*}
+\item If $\beta_{S}R_{j}=0.1$ and $e_{Sj}=4$, we have $R_{j}=1.3$ and $\beta_{S}=0.08$ \medskip
+\item $\ln(1+\beta_{S}R_{j}) \approx \beta_{S}R_{j}$ implies that:
+\begin{align*}
+    \ln \left( \frac{w_{Lj}}{w_{Hj}} \right) = & \ln \left( \frac{\theta}{1-\theta} \right) + \ln \left( \frac{1+\beta_{L}}{1+\beta_{H}} \right) \tag{14}  \\
+    & + (\beta_{H} - \beta_{L})R_{j} 
+\end{align*}
+such that $\beta_{L}=\beta_{H}$ implies that relative wages do not depend on firm-specific productivity shocks.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{AKM worker and firm effects}
+\begin{itemize}
+\item We had that:
+\begin{align*}
+    \ln(w_{Lj}) & \approx \ln \left( \frac{(1-\theta)b}{1 + \beta_{L}} \right) + \beta_{L}R_{j}  \\
+    \ln(w_{Hj}) & \approx \ln \left( \frac{\theta b}{1 + \beta_{H}} \right) + \beta_{H}R_{j} 
+\end{align*}
+\item If $\beta_{L}=\beta_{H}=\beta$, wages can be written as an AKM model:
+\begin{equation*}
+    \ln(w_{Sj}) = \alpha_{S} + \beta R_{j} = \alpha_{S} + \psi_{j} \tag{15}
+\end{equation*}
+with $\alpha_{S}$ and $\psi_{j}$ additive worker and firm effects with $ \alpha_{S} \equiv \ln(b/(1+\beta)) + \mathbb{1}(S=L) \ln(1-\theta) + \mathbb{1}(S=H) \ln(\theta)$
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{AKM worker and firm effects}
+\begin{itemize}
+\item If $\beta_{H} > \beta_{L}$, the log wage gap between $H$ and $L$ will be higher at more profitable firms. \medskip
+\item We get AKM model with skill group–specific firm effects:
+\begin{equation*}
+    \psi_{j}^{H} = \beta_{H}R_{j} > \psi_{j}^{L} = \beta_{L}R_{j} 
+\end{equation*}
+\item Estimate of $\beta_{H}/ \beta_{L}$ from projecting $\psi_{j}^{H}$ onto $\psi_{j}^{L}$:
+\begin{equation*}
+    \psi_{j}^{H} = (\beta_{H}/ \beta_{L}) \psi_{j}^{L}
+\end{equation*}
+\item Card et al. (2016) estimate $\beta$ about 10\% larger for males than females in Portugal (because men value wages more and pass-through of productivity to wages is larger for men).
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Between-firm sorting}
+\begin{itemize}
+\item If $\beta_{H}=\beta_{L}$, the market-wide average wage for $S$ is:
+\begin{equation*}
+    \mathbb{E}[\ln(w_{Si})] = \alpha_{S} + \sum_{j}\psi_{j} \pi_{Sj}
+\end{equation*}
+with $\pi_{Sj}$ the share of $S$-type workers employed at $j$. \medskip
+\item The market-wide wage differential between groups is given by:
+\begin{equation*}
+    \mathbb{E}[\ln(w_{Hi})] - \mathbb{E}[\ln(w_{Li})] = \alpha_{H} - \alpha_{L} + \sum_{j}\psi_{j} [\pi_{Hj} - \pi_{Lj}] \tag{16}
+\end{equation*}
+\item Card et al. (2016) show that 15\% of wage differential between men and women in Portugal is explained by men sorting more into firms that pay higher premium (to men and women).
+\end{itemize}
+\end{frame}
+
+\newpage
+\begin{frame}{Between-firm sorting by age and education}
+\begin{center}
+\begin{figure}
+\includegraphics[scale=0.85]{Cardetal/figures/fig10.pdf}
+\end{figure} 
+\end{center}
+\end{frame}
+
+\begin{frame}{Market-wide wage differences when $\beta_{H} \neq \beta_{L}$}
+\begin{itemize}
+\item If $\beta_{H} \neq \beta_{L}$, the market-wide wage differential is given by:
+\begin{align*}
+    \mathbb{E}[\ln(w_{Hi})] - \mathbb{E}[\ln(w_{Li})] & = \alpha_{H} - \alpha_{L} \\
+    & + \sum_{j}\psi_{j}^{L} [\pi_{Hj} - \pi_{Lj}] + \sum_{j} [\psi_{j}^{H} - \psi_{j}^{L} ]\pi_{Hj}  \\
+    &  = \alpha_{H} - \alpha_{L} \\
+    & + \sum_{j}\psi_{j}^{H} [\pi_{Hj} - \pi_{Lj}] + \sum_{j} [\psi_{j}^{H} - \psi_{j}^{L} ]\pi_{Lj}
+\end{align*}
+\item Market-wide wage differential now also accounts for differential rent-sharing within firms. \medskip
+\item As in Oaxaca decomposition, there are alternative ways to evaluate the relative importance of between and within firm components.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Extensions}
+\begin{itemize}
+\item Downward sloping firm-specific product demand:
+\begin{equation*}
+    P_{j} = P_{j}^{0} Y_{j}^{-1/ \epsilon}
+\end{equation*}
+with $R'_{j} = [(\epsilon - 1)/ \epsilon] \nu_{j}/b$ \medskip
+\item Imperfect substitution between skill groups:
+\begin{equation*}
+    Y_{j} = T_{j} N_{j} = T_{j} \left[ ( (1 - \theta) L_{j}^{\rho} + \theta H_{j}^{\rho}) \right]^{1/\rho}
+\end{equation*}
+and basic intuition of benchmark model remains \medskip
+\item Other extensions would be (non-random) sorting of workers or strategic interactions between employers.
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conclusions}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Conclusions}
+\begin{itemize}
+\item CCHK framework in this paper is known as ``new classical monopsony" \medskip
+\item It is consistent with evidence on rent-sharing elasticities and AKM models of additive worker and firm effects \medskip
+\item New classical monopsony differs from ``modern monopsony" based on search frictions (Burdett\&Mortensen 98) \medskip
+\item Interesting extensions would be to bridge gap between both approaches by incorporating dynamics in CCHK. \medskip
+\item Other interesting extension would be to incorporate strategic interaction between firms.
+\end{itemize}
+\end{frame}
+
+\end{document}
