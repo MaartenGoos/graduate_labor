@@ -1,0 +1,385 @@
+\documentclass[notes=show]{beamer}
+\usepackage{mathpazo}
+\usepackage{hyperref}
+\usepackage{multimedia}
+\usepackage{tcolorbox}
+\usepackage{tikz}
+\usetikzlibrary{shadows}
+\usetheme{metropolis}
+\usecolortheme{default}
+\setbeamertemplate{itemize item}{%
+    \begin{tikzpicture}
+        \shade[ball color=black!100!yellow, preaction={fill=black,
+opacity=.00,transform canvas={xshift=1mm,yshift=-1mm, yscale=0.5}}] (0,0) circle (0.6ex);
+    \end{tikzpicture}
+}
+\setbeamertemplate{itemize subitem}{%
+    \begin{tikzpicture}
+        \shade[ball color=black!100!white, preaction={fill=black,
+        opacity=.00,transform canvas={xshift=1mm,yshift=-1mm, yscale=0.5}}] (0,0) circle (0.6ex);
+    \end{tikzpicture}
+}
+\setbeamercolor{frametitle}{bg=white}
+\setbeamercolor{frametitle}{fg=black}
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{block body}{bg=mDarkTeal!30}
+\setbeamercolor{block title}{bg=mDarkTeal,fg=black!2}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}[page number]
+\newenvironment{stepenumerate}{\begin{enumerate}[<+->]}{\end{enumerate}}
+\newenvironment{stepitemize}{\begin{itemize}[<+->]}{\end{itemize} }
+\newenvironment{stepenumeratewithalert}{\begin{enumerate}[<+-| alert@+>]}{\end{enumerate}}
+\newenvironment{stepitemizewithalert}{\begin{itemize}[<+-| alert@+>]}{\end{itemize} }
+
+\graphicspath{{figures/}}
+
+\AtBeginSection[]
+{
+\begin{frame}{Outline}
+    \tableofcontents[currentsection]
+\end{frame}
+}
+
+\begin{document}
+
+\title{The China Syndrome: Local Labor Market Effects of Import Competition in the US}
+\subtitle{}
+\date{David Autor, David Dorn \& Gordon Hanson \bigskip \\
+\textit{American Economic Review}, October 2013 }
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Stylized facts}
+\begin{itemize}
+\item Pre-1990s limited impact trade on US labor \bigskip
+\item Trend decline in US manufacturing employment \bigskip
+\item Increase in import competition from China \bigskip
+\item Varies across regions in the US \bigskip
+\item Limited offsetting increase in demand for US exports
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Import penetration and manufacturing employment}
+\begin{center}
+\includegraphics[width=\textwidth]{fig-1.pdf}%
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Long-run decline in US manufacturing employment}
+\begin{center}
+\includegraphics[width=\textwidth]{AR-fig-1.pdf}%
+\end{center}
+\end{frame}
+
+\begin{frame}{Research question}
+\begin{itemize}
+\item<1-> Impact of Chinese imports on US local labor markets (CZ)
+\begin{itemize} \medskip
+\item<1-> CZs differently exposed because of industry specialization 
+\end{itemize} \bigskip
+\item<1-> Analyze impact on non-wage variables 
+\begin{itemize} \medskip
+\item<1-> Employment, unemployment, participation, mobility, transfers 
+\end{itemize} \bigskip
+\item<1-> Develop Shift-Share Instrumental Variable (SSIV)
+\begin{itemize} \medskip
+\item<1-> Instrument US import competition (share $\times$ shock) with imports (shock) by other countries
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Key findings for trade-exposed CZs}
+\begin{itemize}
+\item<1-> Lower wages and employment in (non-)manufacturing \bigskip
+\item<1-> Higher unemployment and lower labor force participation \bigskip
+\item<1-> Increased reliance on welfare benefits \bigskip
+\item<1-> Limited evidence of emigration \bigskip
+\item<1-> Significant distributional consequences of trade in reality!
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Theoretical predictions}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Exogenous shocks}
+\begin{itemize}
+\item<1-> China experienced: \bigskip
+\begin{itemize}
+    \item<1-> Productivity growth (central planning $\rightarrow$ market economy) \bigskip
+    \item<1-> Reduction in trade costs (accession to WTO in 2000) \bigskip
+\end{itemize} \medskip
+\item<1-> Opposing shocks in demand for goods in US CZs: \bigskip
+\begin{itemize}
+    \item<1-> Increased competition in markets in which CZs sell output \bigskip
+    \item<1-> Increased demand for goods in China
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{China's rise in world manufacturing}
+\begin{center}
+\includegraphics[width=\textwidth]{AR-fig-2.pdf}%
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{China's revealed comparative advantage in manufacturing}
+\begin{center}
+\includegraphics[width=\textwidth]{AR-fig-3.pdf}%
+\end{center}
+\end{frame}
+
+\begin{frame}{Impacts on labor demand and supply in US CZs}
+\begin{itemize}
+\item<1-> Positive shock to China’s export supply: \medskip
+\begin{itemize}
+    \item<1-> Decrease labor demand in traded goods \medskip
+    \item<1-> Increase labor supply and demand in non-traded sectors \medskip
+\end{itemize}
+\item<1-> Positive shock to China’s import demand: \medskip
+\begin{itemize}
+    \item<1-> Increase labor demand in traded goods \medskip
+    \item<1-> Decrease labor supply and increase labor demand in non-traded sectors \medskip
+\end{itemize}
+\item<1-> Overall adverse effects driven by US trade deficit and regional specialization within US
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Impact on manufacturers of imports}
+\begin{center}
+\includegraphics[width=\textwidth]{fig-model-1.pdf}%
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Impact on manufacturers of exports}
+\begin{center}
+\includegraphics[width=\textwidth]{fig-model-2.pdf}%
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Current account balances}
+\begin{center}
+\includegraphics[width=\textwidth]{AR-fig-5.pdf}%
+\end{center}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Measuring exposure to import competition}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Measuring exposure to import competition}
+\begin{itemize}
+\item Change in Chinese import exposure per worker in a CZ:
+\begin{equation*}
+    \Delta IPW_{zt} = \frac{\sum_{i} L_{izt} \Delta m_{it}}{L_{zt}} \text{ with } \Delta m_{it} = \frac{\Delta M_{it}}{L_{it}}
+\end{equation*}
+for CZ $z$ and industry $i$ \medskip
+\item Rewrite this as:
+\begin{equation*}
+    \Delta IPW_{zt} = \sum_{i} \frac{L_{izt}}{L_{zt}} \frac{\Delta M_{it}}{L_{it}} \tag{3}
+\end{equation*}
+with $L_{izt} / L_{zt}$ the degree of industrial specialization in $z$ and $\Delta M_{it} / L_{it}$ the import value per worker in industry $i$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Trade exposure across CZs}
+\begin{center}
+\includegraphics[width=\textwidth]{AR-fig-6.pdf}%
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Change in net import penetration by sector}
+\begin{center}
+\includegraphics[width=\textwidth]{AR-fig-4.pdf}%
+\end{center}
+\end{frame}
+
+\begin{frame}{Shift-share instrument for import competition}
+\begin{itemize}
+\item $\Delta m_{it} $ could be correlated with unobserved US demand shocks \medskip
+\item Define the instrument:
+\begin{equation*}
+    \Delta \tilde{IPW}_{zt} = \sum_{i} \frac{L_{izt-1}}{L_{zt-1}} \frac{\Delta \tilde{M}_{it}}{L_{it-1}} \tag{4}
+\end{equation*}
+with $ \Delta \tilde{M}_{it}$ Chinese imports into 8 other countries and $t-1$ to account for expected employment impact of China shock at $t$ \medskip
+\item Instrument predicts supply-driven changes in Chinese imports (e.g. China's SEZ, accession to WTO in 2000)
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Empirical research design}
+\begin{itemize}
+\item SSIV using a 2SLS estimator (using an instrument for the shift $\Delta m_{it} $ and not for the share $L_{izt} / L_{zt}$)  \medskip
+\item Second stage: 
+\begin{equation*}
+  \Delta Y_{zt}^m = \gamma_{t} + \beta_{1} \Delta \hat{IPW}_{zt} + X_{it}' \beta_{2} + \epsilon_{zt} \tag{5}
+\end{equation*}
+\item First stage:
+\begin{equation*}
+  \Delta IPW_{zt} = \beta_{3} \Delta \tilde{IPW}_{zt} + \tilde{\epsilon}_{zt}
+\end{equation*}
+\item Standard errors are clustered at the state level to allow for spatial correlations across CZs
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Results}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Adverse impact on manufacturing employment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{First-stage estimates}
+\begin{center}
+\includegraphics[width=\textwidth]{fig-2A.pdf}%
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Reduced-form estimates}
+\begin{center}
+\includegraphics[width=\textwidth]{fig-2B.pdf}%
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Decline in manufacturing employment (no controls)}
+\begin{center}
+\includegraphics[width=\textwidth]{table-2.pdf}%
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Decline in manufacturing employment (with controls)}
+\begin{center}
+\includegraphics[width=\textwidth]{table-3.pdf}%
+\end{center}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Limited worker reallocation between CZs}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Limited worker reallocation between CZs}
+\begin{center}
+\includegraphics[width=\textwidth]{table-4.pdf}%
+\end{center}
+\end{frame}
+
+\begin{frame}{Limited reallocation of workers between CZ}
+\begin{itemize}
+\item No evidence that shocks to local manufacturing lead to change in population \bigskip
+\item Shocks to manufacturing too small to affect outcomes in broader CZ \bigskip
+\item Shocks are substantial but no reallocation of workers because moving costs too high \bigskip
+\item CZ absorbs shock through other employment in CZ and/or lower wages 
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Adjustments within trade-exposed CZs}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Job loss in trade-exposed CZs}
+\begin{center}
+\includegraphics[width=\textwidth]{table-5.pdf}%
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Negative impact on average wage in trade-exposed CZs}
+\begin{center}
+\includegraphics[width=\textwidth]{table-6.pdf}%
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Negative impact on non-manuf. wage in trade-exposed CZs}
+\begin{center}
+\includegraphics[width=\textwidth]{table-7.pdf}%
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Increased welfare payments in trade-exposed CZs}
+\begin{center}
+\includegraphics[width=\textwidth]{table-8.pdf}%
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Impact of \$1000 increase in exposure on welfare payments}
+\begin{center}
+\includegraphics[width=\textwidth]{AR-fig-7.pdf}%
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Decrease in HH income in trade-exposed CZs}
+\begin{center}
+\includegraphics[width=\textwidth]{table-9.pdf}%
+\end{center}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Robustness checks}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Different measures of import competition}
+\begin{itemize}
+    \item Include competition in foreign markets \bigskip
+    \item Include imports of intermediate inputs \bigskip
+    \item Use net import from China (i.e. include export effects) \bigskip
+    \item Use gravity residual of relative productivity changes \bigskip
+    \item Use H-O factor content of US net imports from China
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Conclusions}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Conclusions}
+\begin{itemize}
+\item Impact of Chinese import competition through reducing manufacturing employment \bigskip
+\item Chinese import competition explains 21 percent of decline manufacturing employment in U.S. from 1991 to 2007 \bigskip
+\item Limited labor market adjustments across CZ \bigskip
+\item In trade-exposed CZ, there is a decline in non-manufacturing wages, increase in unemployment and transfer payments
+\end{itemize}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Further readings}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Further readings}
+\begin{itemize}
+\footnotesize
+\item Autor, Dorn, Hanson, and Song. 2014. Trade adjustment: Worker Level Evidence. \textit{Quartely Journal of Economics}. 129(4):1799–860 \smallskip
+\item Autor, Dorn, and Hanson. 2016. The China Shock: Learning from Labor-Market Adjustment to Large Changes in Trade. \textit{Annual Review of Economics}. 8:205–40 \medskip
+\item Autor, Dorn, and Hanson. 2019. When Work Disappears: Manufacturing Decline and the Falling Marriage Market Value of Young Men. \textit{American Economic Review: Insights}. 1(2):161-178 \medskip
+\item Autor, Dorn, Hanson, and Majlesi. 2020. Importing Political Polarization? The Electoral Consequences of Rising Trade Exposure. \textit{American Economic Review}. 110(10):3139–3183 \medskip
+\item Autor, Dorn, and Hanson. 2021. On the Persistence of the China Shock. forthcoming in \textit{Brookings Papers on Economic Activity}. \medskip
+\item Autor, Beck, Dorn, and Hanson. 2024. Help for the Heartland? The Employment and Electoral Effects of the Trump Tariffs.
+\end{itemize}
+\end{frame}
+
+\end{document}
